@@ -8,7 +8,7 @@
   <version>0.1.1</version>
   <packaging>jar</packaging>
   <name>Crawlora Google Java Client</name>
-  <description>Java client for Crawlora's hosted Google API, with Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs. Requires a Crawlora API key.</description>
+  <description>Java client for Crawlora's hosted Google API, with Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs. Requires a Crawlora API key. Includes all 40 public API endpoints.</description>
   <url>https://crawlora.net/?utm_source=maven-central&amp;utm_medium=referral&amp;utm_campaign=platform-clients&amp;utm_content=google-java-homepage</url>
   <licenses><license><name>MIT License</name><url>https://opensource.org/licenses/MIT</url><distribution>repo</distribution></license></licenses>
   <developers><developer><name>Crawlora</name><organization>Crawlora</organization><organizationUrl>https://crawlora.net/?utm_source=maven-central&amp;utm_medium=referral&amp;utm_campaign=platform-clients&amp;utm_content=google-java-organization-homepage</organizationUrl></developer></developers>

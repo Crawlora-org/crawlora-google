@@ -1,6 +1,21 @@
 {
   "name": "crawlora/google",
-  "description": "Google client for the Crawlora hosted API",
+  "description": "Crawlora Google API client with 40 endpoints for Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "web-scraping",
+    "google",
+    "maps-search",
+    "places",
+    "reviews-photos",
+    "news",
+    "trends",
+    "finance-quotes-markets",
+    "suggestions",
+    "videos",
+    "jobs"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {
