@@ -5,8 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "crawlora-google"
 version = "0.1.1"
-description = "Typed Google client for the Crawlora hosted API"
+description = "Crawlora Google API client with 40 endpoints for Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs"
 readme = "README.md"
+keywords = ["crawlora", "api-client", "web-scraping", "google", "maps-search", "places", "reviews-photos", "news", "trends", "finance-quotes-markets", "suggestions", "videos", "jobs"]
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]

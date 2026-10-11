@@ -3,8 +3,8 @@ require_relative "lib/crawlora/google/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-google"
   spec.version = Crawlora::Google::VERSION
-  spec.summary = "Google client for the Crawlora hosted API"
-  spec.description = "Credential-free Google API access through Crawlora's hosted service."
+  spec.summary = "Google API client for Crawlora (40 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted Google API. Covers Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs across 40 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"

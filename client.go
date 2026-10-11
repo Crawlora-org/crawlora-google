@@ -1,4 +1,4 @@
-// Package google is a focused Go client for Crawlora's Google endpoints.
+// Package google is Crawlora's Google API client for 40 endpoints, covering Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs.
 // API documentation: https://crawlora.net/docs?utm_source=pkg.go.dev&utm_medium=referral&utm_campaign=platform-clients&utm_content=google-go-api-docs
 package google
 
