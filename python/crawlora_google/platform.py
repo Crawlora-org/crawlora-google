@@ -7,7 +7,7 @@ from .async_client import AsyncCrawloraClient
 class GoogleClient(CrawloraClient):
     """Synchronous Google API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-google-python/0.1.0')
+        kwargs.setdefault('user_agent', 'crawlora-google-python/0.1.1')
         super().__init__(*args, **kwargs)
 
     def finance_analyst_articles(self, **params: Any) -> Any:
@@ -253,7 +253,7 @@ class GoogleClient(CrawloraClient):
 class AsyncGoogleClient(AsyncCrawloraClient):
     """Asynchronous Google API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-google-python/0.1.0')
+        kwargs.setdefault('user_agent', 'crawlora-google-python/0.1.1')
         super().__init__(*args, **kwargs)
 
     async def finance_analyst_articles(self, **params: Any) -> Any:
