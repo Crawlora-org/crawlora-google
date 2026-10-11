@@ -1,0 +1,29 @@
+{
+  "name": "crawlora/google",
+  "description": "Google client for the Crawlora hosted API",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Crawlora\\Google\\": "src/Crawlora/Google/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Crawlora\\Google\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/client_test.php"
+  },
+  "homepage": "https://crawlora.net/?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=google-php-homepage",
+  "support": {
+    "source": "https://github.com/Crawlora-org/crawlora-google",
+    "docs": "https://crawlora.net/docs?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=google-php-api-docs"
+  }
+}

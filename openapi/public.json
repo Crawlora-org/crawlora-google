@@ -1,0 +1,6085 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "finance.About": {
+      "properties": {
+        "about": {
+          "description": "Information about the company.",
+          "example": "SAP SE is a European multinational software company based in Walldorf, Baden-Württemberg, Germany...",
+          "type": "string"
+        },
+        "ceo": {
+          "description": "The CEO of the company.",
+          "example": "Christian Klein",
+          "type": "string"
+        },
+        "employees": {
+          "description": "The number of employees.",
+          "example": 107583,
+          "type": "integer"
+        },
+        "founded": {
+          "description": "The founding date of the company.",
+          "example": "1972-04-01T00:00:00Z",
+          "type": "string"
+        },
+        "headquarters": {
+          "description": "The headquarters of the company.",
+          "example": "Walldorf, Baden-Württemberg, Germany",
+          "type": "string"
+        },
+        "website": {
+          "description": "The company's website.",
+          "example": "https://www.sap.com/",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.BalanceSheet": {
+      "properties": {
+        "cash_and_short_term_change_yy": {
+          "description": "Year-over-year change in cash and short-term investments (%)",
+          "example": 5.87,
+          "type": "number"
+        },
+        "cash_and_short_term_investments": {
+          "description": "Cash and short-term investments in USD",
+          "example": 65170000000,
+          "type": "number"
+        },
+        "price_to_book": {
+          "description": "Price to book ratio",
+          "example": 67.71,
+          "type": "number"
+        },
+        "quarter": {
+          "description": "The fiscal quarter",
+          "example": 4,
+          "type": "integer"
+        },
+        "return_on_assets": {
+          "description": "Return on assets (%)",
+          "example": 21.24,
+          "type": "number"
+        },
+        "return_on_capital": {
+          "description": "Return on capital (%)",
+          "example": 43.01,
+          "type": "number"
+        },
+        "shares_outstanding": {
+          "description": "Shares outstanding",
+          "example": 15120000000,
+          "type": "number"
+        },
+        "total_assets": {
+          "description": "Total assets in USD",
+          "example": 364980000000,
+          "type": "number"
+        },
+        "total_assets_change_yy": {
+          "description": "Year-over-year change in total assets (%)",
+          "example": 3.52,
+          "type": "number"
+        },
+        "total_equity": {
+          "description": "Total equity in USD",
+          "example": 56950000000,
+          "type": "number"
+        },
+        "total_liabilities": {
+          "description": "Total liabilities in USD",
+          "example": 308030000000,
+          "type": "number"
+        },
+        "total_liabilities_change_yy": {
+          "description": "Year-over-year change in total liabilities (%)",
+          "example": 6.06,
+          "type": "number"
+        },
+        "year": {
+          "description": "The fiscal year",
+          "example": 2024,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.CashFlow": {
+      "properties": {
+        "cash_from_financing": {
+          "description": "Cash from financing in USD",
+          "example": -24950000000,
+          "type": "number"
+        },
+        "cash_from_financing_change_yy": {
+          "description": "Year-over-year change in cash from financing (%)",
+          "example": -7.75,
+          "type": "number"
+        },
+        "cash_from_investing": {
+          "description": "Cash from investing in USD",
+          "example": 1450000000,
+          "type": "number"
+        },
+        "cash_from_investing_change_yy": {
+          "description": "Year-over-year change in cash from investing (%)",
+          "example": -39.64,
+          "type": "number"
+        },
+        "cash_from_operations": {
+          "description": "Cash from operations in USD",
+          "example": 26810000000,
+          "type": "number"
+        },
+        "cash_from_operations_change_yy": {
+          "description": "Year-over-year change in cash from operations (%)",
+          "example": 24.14,
+          "type": "number"
+        },
+        "free_cash_flow": {
+          "description": "Free cash flow in USD",
+          "example": 34540000000,
+          "type": "number"
+        },
+        "free_cash_flow_change_yy": {
+          "description": "Year-over-year change in free cash flow (%)",
+          "example": 180.6,
+          "type": "number"
+        },
+        "net_change_in_cash": {
+          "description": "Net change in cash in USD",
+          "example": 3310000000,
+          "type": "number"
+        },
+        "net_change_in_cash_change_yy": {
+          "description": "Year-over-year change in net change in cash (%)",
+          "example": 294.28,
+          "type": "number"
+        },
+        "net_income": {
+          "description": "Net income in USD",
+          "example": 14740000000,
+          "type": "number"
+        },
+        "net_income_change_yy": {
+          "description": "Year-over-year change in net income (%)",
+          "example": -35.81,
+          "type": "number"
+        },
+        "quarter": {
+          "description": "The fiscal quarter",
+          "example": 4,
+          "type": "integer"
+        },
+        "year": {
+          "description": "The fiscal year",
+          "example": 2024,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.CategoryNewsResponse": {
+      "properties": {
+        "category": {
+          "example": "18",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.FinanceArticle"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.CategoryStocksResponse": {
+      "properties": {
+        "category": {
+          "example": "18",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.ChartResponse": {
+      "properties": {
+        "instrument": {
+          "$ref": "#/definitions/finance.Instrument"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/definitions/finance.Ticker"
+          },
+          "type": "array"
+        },
+        "previous_close": {
+          "example": 236.35,
+          "type": "number"
+        },
+        "window": {
+          "example": "1m",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.ClassificationResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "instrument": {
+          "$ref": "#/definitions/finance.Instrument"
+        }
+      },
+      "type": "object"
+    },
+    "finance.CompanyInfo": {
+      "properties": {
+        "ceo": {
+          "example": "Tim Cook",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "employees": {
+          "example": 166000,
+          "type": "integer"
+        },
+        "fifty_two_week_high": {
+          "example": 288.61,
+          "type": "number"
+        },
+        "fifty_two_week_low": {
+          "example": 169.21,
+          "type": "number"
+        },
+        "headquarters": {
+          "example": "Cupertino, CA, US",
+          "type": "string"
+        },
+        "high": {
+          "example": 272.4,
+          "type": "number"
+        },
+        "low": {
+          "example": 269.1,
+          "type": "number"
+        },
+        "market_cap": {
+          "example": 4010000000000,
+          "type": "number"
+        },
+        "open": {
+          "example": 270.9,
+          "type": "number"
+        },
+        "pe_ratio": {
+          "example": 34.56,
+          "type": "number"
+        },
+        "sector": {
+          "example": "Technology",
+          "type": "string"
+        },
+        "volume": {
+          "example": 41339643,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.ContextResponse": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "query": {
+          "example": "apple",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.EarningsCalendarResponse": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.EarningsEvent"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "finance.EarningsEvent": {
+      "properties": {
+        "company_name": {
+          "type": "string"
+        },
+        "conference_phone": {
+          "type": "string"
+        },
+        "conference_url": {
+          "type": "string"
+        },
+        "event_time": {
+          "type": "string"
+        },
+        "event_unix": {
+          "type": "integer"
+        },
+        "fiscal_period": {
+          "type": "string"
+        },
+        "instrument": {
+          "$ref": "#/definitions/finance.Instrument"
+        }
+      },
+      "type": "object"
+    },
+    "finance.FinanceArticle": {
+      "properties": {
+        "published_at": {
+          "type": "string"
+        },
+        "published_unix": {
+          "example": 1777077000,
+          "type": "integer"
+        },
+        "related": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "source": {
+          "example": "Reuters",
+          "type": "string"
+        },
+        "thumbnail_url": {
+          "type": "string"
+        },
+        "title": {
+          "example": "Apple announces an update",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/news",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.FinancialPeriod": {
+      "properties": {
+        "capital_expenditure": {
+          "type": "number"
+        },
+        "ebitda": {
+          "type": "number"
+        },
+        "eps": {
+          "type": "number"
+        },
+        "eps_diluted": {
+          "type": "number"
+        },
+        "free_cash_flow": {
+          "type": "number"
+        },
+        "net_income": {
+          "type": "number"
+        },
+        "operating_cash_flow": {
+          "type": "number"
+        },
+        "operating_income": {
+          "type": "number"
+        },
+        "operating_margin": {
+          "type": "number"
+        },
+        "pe_ratio": {
+          "type": "number"
+        },
+        "period": {
+          "example": "annual",
+          "type": "string"
+        },
+        "period_end": {
+          "type": "string"
+        },
+        "profit_margin": {
+          "type": "number"
+        },
+        "revenue": {
+          "type": "number"
+        },
+        "revenue_growth_yoy": {
+          "type": "number"
+        },
+        "shares_outstanding": {
+          "type": "number"
+        },
+        "total_assets": {
+          "type": "number"
+        },
+        "total_equity": {
+          "type": "number"
+        },
+        "total_liabilities": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "finance.FinancialsResponse": {
+      "properties": {
+        "annual": {
+          "items": {
+            "$ref": "#/definitions/finance.FinancialPeriod"
+          },
+          "type": "array"
+        },
+        "currency": {
+          "example": "USD",
+          "type": "string"
+        },
+        "quarterly": {
+          "items": {
+            "$ref": "#/definitions/finance.FinancialPeriod"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "finance.HeadlineResponse": {
+      "properties": {
+        "article": {
+          "$ref": "#/definitions/finance.FinanceArticle"
+        }
+      },
+      "type": "object"
+    },
+    "finance.IncomeStatement": {
+      "properties": {
+        "earnings_per_share": {
+          "description": "Earnings per share in USD",
+          "example": 1.64,
+          "type": "number"
+        },
+        "earnings_per_share_change_yy": {
+          "description": "Year-over-year change in earnings per share (%)",
+          "example": 12.33,
+          "type": "number"
+        },
+        "ebitda": {
+          "description": "EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) in USD",
+          "example": 32502000000,
+          "type": "number"
+        },
+        "ebitda_change_yy": {
+          "description": "Year-over-year change in EBITDA (%)",
+          "example": 9.72,
+          "type": "number"
+        },
+        "effective_tax_rate": {
+          "description": "Effective tax rate (%)",
+          "example": 50.23,
+          "type": "number"
+        },
+        "net_income": {
+          "description": "Net income in USD",
+          "example": 14740000000,
+          "type": "number"
+        },
+        "net_income_change_yy": {
+          "description": "Year-over-year change in net income (%)",
+          "example": -35.81,
+          "type": "number"
+        },
+        "net_profit_margin": {
+          "description": "Net profit margin (%)",
+          "example": 15.52,
+          "type": "number"
+        },
+        "net_profit_margin_change_yy": {
+          "description": "Year-over-year change in net profit margin (%)",
+          "example": -39.49,
+          "type": "number"
+        },
+        "operating_expense": {
+          "description": "Total operating expense in USD",
+          "example": 14736000000,
+          "type": "number"
+        },
+        "operating_expense_change_yy": {
+          "description": "Year-over-year change in operating expense (%)",
+          "example": 6.17,
+          "type": "number"
+        },
+        "quarter": {
+          "description": "The fiscal quarter",
+          "example": 4,
+          "type": "integer"
+        },
+        "revenue": {
+          "description": "Total revenue in USD",
+          "example": 94930000000,
+          "type": "number"
+        },
+        "revenue_change_yy": {
+          "description": "Year-over-year change in revenue (%)",
+          "example": 6.07,
+          "type": "number"
+        },
+        "year": {
+          "description": "The fiscal year",
+          "example": 2024,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.Instrument": {
+      "properties": {
+        "after_hours": {
+          "$ref": "#/definitions/finance.PriceChange"
+        },
+        "change": {
+          "example": -3.37,
+          "type": "number"
+        },
+        "change_percent": {
+          "example": -1.3,
+          "type": "number"
+        },
+        "country": {
+          "example": "US",
+          "type": "string"
+        },
+        "currency": {
+          "example": "USD",
+          "type": "string"
+        },
+        "exchange": {
+          "example": "NASDAQ",
+          "type": "string"
+        },
+        "google_id": {
+          "example": "/m/07zmbvf",
+          "type": "string"
+        },
+        "identifier": {
+          "example": "AAPL:NASDAQ",
+          "type": "string"
+        },
+        "last_update_unix": {
+          "example": 1777077000,
+          "type": "integer"
+        },
+        "name": {
+          "example": "Apple Inc",
+          "type": "string"
+        },
+        "previous_close": {
+          "example": 236.35,
+          "type": "number"
+        },
+        "price": {
+          "example": 255.65,
+          "type": "number"
+        },
+        "ticker": {
+          "example": "AAPL",
+          "type": "string"
+        },
+        "timezone": {
+          "example": "America/New_York",
+          "type": "string"
+        },
+        "type": {
+          "example": "stock",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.Investment": {
+      "properties": {
+        "balance_sheet": {
+          "description": "The balance sheet data.",
+          "items": {
+            "$ref": "#/definitions/finance.BalanceSheet"
+          },
+          "type": "array"
+        },
+        "cash_flow": {
+          "description": "The cash flow data.",
+          "items": {
+            "$ref": "#/definitions/finance.CashFlow"
+          },
+          "type": "array"
+        },
+        "income_statement": {
+          "description": "The income statement data.",
+          "items": {
+            "$ref": "#/definitions/finance.IncomeStatement"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "finance.KeyStats": {
+      "properties": {
+        "avg_volume": {
+          "description": "The average trading volume.",
+          "example": 1510000,
+          "type": "integer"
+        },
+        "climate_change_score": {
+          "description": "The climate change score of the company.",
+          "example": "B",
+          "type": "string"
+        },
+        "currency": {
+          "description": "The currency of the stock price.",
+          "example": "EUR",
+          "type": "string"
+        },
+        "day_range": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Range"
+            }
+          ],
+          "description": "The day's price range."
+        },
+        "dividend_yield": {
+          "description": "The dividend yield percentage.",
+          "example": 0.0092,
+          "type": "number"
+        },
+        "market_cap": {
+          "description": "The market capitalization of the company.",
+          "example": 291570000000,
+          "type": "integer"
+        },
+        "pe_ratio": {
+          "description": "The price-to-earnings ratio.",
+          "example": 99.95,
+          "type": "number"
+        },
+        "previous_close": {
+          "description": "The previous closing price of the stock.",
+          "example": 236.35,
+          "type": "number"
+        },
+        "primary_exchange": {
+          "description": "The primary exchange where the stock is listed.",
+          "example": "ETR",
+          "type": "string"
+        },
+        "tags": {
+          "description": "Tags describing the stock.",
+          "example": [
+            "[\"Stock\"",
+            " \"DE listed security\"",
+            " \"DE headquartered\"]"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "year_range": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Range"
+            }
+          ],
+          "description": "The year's price range."
+        }
+      },
+      "type": "object"
+    },
+    "finance.MarketMoversResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 20,
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.News": {
+      "properties": {
+        "source": {
+          "description": "The source of the news.",
+          "example": "Reuters",
+          "type": "string"
+        },
+        "time": {
+          "description": "The publication time of the news.",
+          "example": "2024-12-27T09:03:00Z",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the news article.",
+          "example": "SAP Announces Q3 Earnings",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL to the news article.",
+          "example": "https://www.reuters.com/article/sap-q3",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.PriceChange": {
+      "properties": {
+        "change": {
+          "example": -3.37,
+          "type": "number"
+        },
+        "change_percent": {
+          "example": -1.3,
+          "type": "number"
+        },
+        "price": {
+          "example": 255.65,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "finance.QuoteResp": {
+      "properties": {
+        "about": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.About"
+            }
+          ],
+          "description": "Information about the company."
+        },
+        "investment": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Investment"
+            }
+          ],
+          "description": "The investment-related data."
+        },
+        "key_stats": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.KeyStats"
+            }
+          ],
+          "description": "The key statistics about the stock."
+        },
+        "news": {
+          "description": "The news related to the stock/company.",
+          "items": {
+            "$ref": "#/definitions/finance.News"
+          },
+          "type": "array"
+        },
+        "tickers": {
+          "description": "Historical ticker data.",
+          "items": {
+            "$ref": "#/definitions/finance.Ticker"
+          },
+          "type": "array"
+        },
+        "title": {
+          "description": "The title or name of the stock/company.",
+          "example": "SAP SE",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.Range": {
+      "properties": {
+        "from": {
+          "description": "The lower bound of the range.",
+          "example": 237.95,
+          "type": "number"
+        },
+        "to": {
+          "description": "The upper bound of the range.",
+          "example": 241.4,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "finance.RelatedResponse": {
+      "properties": {
+        "instrument": {
+          "$ref": "#/definitions/finance.Instrument"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "finance.StockData": {
+      "properties": {
+        "change": {
+          "description": "The absolute change in the stock price compared to the previous close.",
+          "example": -3.369995,
+          "type": "number"
+        },
+        "company_name": {
+          "description": "The name of the company associated with the stock ticker.",
+          "example": "Apple Inc",
+          "type": "string"
+        },
+        "currency": {
+          "description": "The currency in which the stock price is denominated.",
+          "example": "USD",
+          "type": "string"
+        },
+        "exchange": {
+          "description": "The stock exchange where the stock is listed.",
+          "example": "NASDAQ",
+          "type": "string"
+        },
+        "percentage": {
+          "description": "The percentage change in the stock price compared to the previous close.",
+          "example": -1.301056,
+          "type": "number"
+        },
+        "price": {
+          "description": "The current price of the stock.",
+          "example": 255.65,
+          "type": "number"
+        },
+        "ticker": {
+          "description": "The stock ticker symbol.",
+          "example": "AAPL",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.Ticker": {
+      "properties": {
+        "price": {
+          "description": "The price at the given time.",
+          "example": 239.5,
+          "type": "number"
+        },
+        "time": {
+          "description": "The time of the ticker record.",
+          "example": "2024-12-27T09:03:00Z",
+          "type": "string"
+        },
+        "volume": {
+          "description": "The trading volume at the given time.",
+          "example": 131032,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.TopStocksResponse": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "metric": {
+          "example": 6,
+          "type": "integer"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "finance.articlesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/finance.FinanceArticle"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.categoryNewsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.CategoryNewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.categoryStocksResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.CategoryStocksResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.chartResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.ChartResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.classificationResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.ClassificationResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.companyResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.CompanyInfo"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.contextResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.ContextResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.earningsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.EarningsCalendarResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.financialsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.FinancialsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.headlineResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.HeadlineResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.instrumentsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/finance.Instrument"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.marketMoversResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.MarketMoversResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.quoteResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.QuoteResp"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.relatedResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.RelatedResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/finance.StockData"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.tickerResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/finance.Ticker"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "finance.topStocksResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/finance.TopStocksResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.JobItem": {
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "employment": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "posted_at": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.JobsOption": {
+      "properties": {
+        "location": {
+          "example": "San Francisco, CA",
+          "type": "string"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "query": {
+          "example": "software engineer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object"
+    },
+    "google.JobsResponse": {
+      "properties": {
+        "location": {
+          "example": "San Francisco, CA",
+          "type": "string"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "query": {
+          "example": "software engineer",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/google.JobItem"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "google.MapSearchOption": {
+      "properties": {
+        "country": {
+          "example": "us",
+          "type": "string"
+        },
+        "keyword": {
+          "example": "hotel san francisco",
+          "type": "string"
+        },
+        "language": {
+          "example": "en",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.NewsResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/google.VerticalPagination"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/google.NewsResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "google.NewsResult": {
+      "properties": {
+        "age": {
+          "example": "2 hours ago",
+          "type": "string"
+        },
+        "description": {
+          "example": "OpenAI announced an update.",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "source": {
+          "example": "Example News",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://example.com/thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI announces update",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/openai-news",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.NewsSearchResp": {
+      "properties": {
+        "result": {
+          "items": {
+            "$ref": "#/definitions/google.SearchItem"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "google.Place": {
+      "properties": {
+        "address": {
+          "example": "250 Beach St, San Francisco, CA 94133",
+          "type": "string"
+        },
+        "amenities": {
+          "example": [
+            "['Free Wi-Fi'",
+            " 'Air-conditioned'",
+            " 'Wi-Fi'",
+            " 'Parking']"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "category": {
+          "example": [
+            "['hotel']"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "example": "A 3-minute walk from Pier 41 in the Fisherman's Wharf district...",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://lh5.googleusercontent.com/p/AF1QipP_O55x7gOwR3AaM09CVmzEUude9wMHMPwc--yp",
+          "type": "string"
+        },
+        "latitude": {
+          "example": 37.8077617,
+          "type": "number"
+        },
+        "locations": {
+          "example": [
+            "['San Francisco'",
+            " 'Los Angeles']"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "longitude": {
+          "example": -122.4132228,
+          "type": "number"
+        },
+        "name": {
+          "example": "Hotel Zephyr San Francisco",
+          "type": "string"
+        },
+        "phone": {
+          "example": "14156176565",
+          "type": "string"
+        },
+        "place_id": {
+          "example": "ChIJ99URUeOAhYAR0J5ZUxTesDQ",
+          "type": "string"
+        },
+        "rating": {
+          "description": "Rating is the aggregate Google rating (1.0–5.0), or null when the place has no\naggregate rating on Google (Google never assigns a 0.x average, so 0 always meant\n\"unrated\"). A pointer so unrated serializes as `rating: null`, not a misleading 0.",
+          "example": 4.1,
+          "type": "number",
+          "x-nullable": true
+        },
+        "review_count": {
+          "example": 3213,
+          "type": "integer"
+        },
+        "url": {
+          "example": "https://www.google.com/maps/place/?q=place_id:ChIJ99URUeOAhYAR0J5ZUxTesDQ",
+          "type": "string"
+        },
+        "website": {
+          "example": "https://www.hotelzephyrsf.com/",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.PlacePhoto": {
+      "properties": {
+        "height": {
+          "example": 100,
+          "type": "integer"
+        },
+        "url": {
+          "description": "URL is Google's image URL exactly as served, including its size suffix\n(e.g. `=w203-h100-k-no`). Swap that suffix to request other dimensions.",
+          "example": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlbepbs69mWZVN7SNi4FYseIr1JvRCpGHgpFfN5wOf02mKOVdfv2REVb896InfULrDb_yQmqdxmQcSnmwHp2VncbLzYxzWtsUFFbKH3buF34st-Nhlg1fEIH0_tkmvNKJmWKEHKv45RBu4=w203-h100-k-no",
+          "type": "string"
+        },
+        "width": {
+          "description": "Width and Height are the pixel dimensions of the URL as served, when\nGoogle reports them. 0 means not captured.",
+          "example": 203,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "google.PlaceReview": {
+      "properties": {
+        "author_id": {
+          "description": "AuthorID is the reviewer's stable Google contributor id.",
+          "example": "112997636113922766481",
+          "type": "string"
+        },
+        "author_name": {
+          "description": "AuthorName is the reviewer's display name.",
+          "example": "Supisara Darnchaloemwong",
+          "type": "string"
+        },
+        "author_photo": {
+          "description": "AuthorPhoto is the reviewer's avatar URL.",
+          "example": "https://lh3.googleusercontent.com/a-/ALV-UjWc6XFX9IKHJiQ4vZoY7o_EVCYkjMbWjGfdPZrLEw",
+          "type": "string"
+        },
+        "author_review_count": {
+          "description": "AuthorReviewCount is how many reviews this contributor has written in\ntotal, as reported by Google. 0 means not captured, and is normal for a\nreview syndicated from another site.",
+          "example": 23,
+          "type": "integer"
+        },
+        "author_url": {
+          "description": "AuthorURL is the reviewer's public Google Maps contributor page.",
+          "example": "https://www.google.com/maps/contrib/112997636113922766481",
+          "type": "string"
+        },
+        "id": {
+          "description": "ID is Google's opaque review identifier, stable across fetches.",
+          "example": "Ci9DQUlRQUNvZENodHljRjlvT201dFRHSk1aRU54T0U5cmRFVjNlbGRmU1RJNFkzYxAB",
+          "type": "string"
+        },
+        "photos": {
+          "description": "Photos are the images attached to this review, largest variant first.",
+          "items": {
+            "$ref": "#/definitions/google.PlacePhoto"
+          },
+          "type": "array"
+        },
+        "published_at": {
+          "description": "PublishedAt is the review timestamp in RFC3339 (UTC). Empty when Google\ndid not report one.",
+          "example": "2026-01-01T14:39:25Z",
+          "type": "string"
+        },
+        "rating": {
+          "description": "Rating is the star rating this reviewer gave, 1-5.",
+          "example": 5,
+          "type": "integer"
+        },
+        "relative_time": {
+          "description": "RelativeTime is Google's own human-readable age for the review, in the\nrequested language (e.g. \"6 months ago\").",
+          "example": "6 months ago",
+          "type": "string"
+        },
+        "source": {
+          "description": "Source is the site the review came from. Google's place pages syndicate\nreviews from partner sites (notably for hotels), so this is \"Google\" for a\nnative Google review and the partner's name (e.g. \"Tripadvisor\",\n\"TrustYou\") otherwise.",
+          "example": "Google",
+          "type": "string"
+        },
+        "text": {
+          "description": "Text is the review body. Empty for a photo-only review, which Google allows.",
+          "example": "I never knew pork could taste this good.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.SearchItem": {
+      "properties": {
+        "Snippet": {
+          "example": "Never run out of your favorite coffees, teas and powders again with our auto-delivery subscription. Select how often your products arrive, pause and cancel ...",
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "link": {
+          "example": "https://www.coffeebean.com/",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "time": {
+          "example": "7 hours ago",
+          "type": "string"
+        },
+        "title": {
+          "example": "Home | The Coffee Bean & Tea Leaf",
+          "type": "string"
+        },
+        "website_name": {
+          "example": "OpenAI",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.SearchOption": {
+      "properties": {
+        "country": {
+          "description": "Country code",
+          "example": "us",
+          "type": "string"
+        },
+        "keyword": {
+          "example": "chatgpt",
+          "type": "string"
+        },
+        "language": {
+          "description": "language code",
+          "example": "en",
+          "type": "string"
+        },
+        "limit": {
+          "description": "Number of items,  from 10 to 100, inclusive",
+          "example": 10,
+          "type": "integer"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "country",
+        "keyword",
+        "language"
+      ],
+      "type": "object"
+    },
+    "google.SuggestResponse": {
+      "properties": {
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "source": {
+          "example": "web",
+          "type": "string"
+        },
+        "suggestions": {
+          "items": {
+            "$ref": "#/definitions/google.SuggestionResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "google.SuggestionResult": {
+      "properties": {
+        "description": {
+          "example": "OpenAI Blog",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "query": {
+          "example": "openai api",
+          "type": "string"
+        },
+        "relevance": {
+          "example": 601,
+          "type": "integer"
+        },
+        "type": {
+          "example": "QUERY",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.VerticalPagination": {
+      "properties": {
+        "next_page": {
+          "example": 2,
+          "type": "integer"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "previous_page": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "google.VideoResult": {
+      "properties": {
+        "age": {
+          "example": "2 days ago",
+          "type": "string"
+        },
+        "description": {
+          "example": "Watch the OpenAI DevDay keynote.",
+          "type": "string"
+        },
+        "duration": {
+          "example": "45:12",
+          "type": "string"
+        },
+        "platform": {
+          "example": "YouTube",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "thumbnail": {
+          "example": "https://example.com/thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI DevDay keynote - YouTube",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.youtube.com/watch?v=openai-devday",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.VideosResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/google.VerticalPagination"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/google.VideoResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "google.mapPlacePhotosResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/google.PlacePhoto"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "ok",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.mapPlaceResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/google.Place"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.mapPlaceReviewsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/google.PlaceReview"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "ok",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.mapSearchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/google.Place"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.newsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/google.NewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.newsSearchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/google.NewsSearchResp"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/google.SuggestResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "google.videosResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/google.VideosResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.ExploreQueriesResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "type": "string"
+        },
+        "queries": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "query_type": {
+          "example": "top",
+          "type": "string"
+        },
+        "time_range": {
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "type": {
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.ExploreRequest": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "enum": [
+            "WORLDWIDE",
+            "AF",
+            "AX",
+            "AL",
+            "DZ",
+            "AS",
+            "AD",
+            "AO",
+            "AI",
+            "AQ",
+            "AG",
+            "AR",
+            "AM",
+            "AW",
+            "AU",
+            "AT",
+            "AZ",
+            "BS",
+            "BH",
+            "BD",
+            "BB",
+            "BY",
+            "BE",
+            "BZ",
+            "BJ",
+            "BM",
+            "BT",
+            "BO",
+            "BA",
+            "BW",
+            "BV",
+            "BR",
+            "IO",
+            "VG",
+            "BN",
+            "BG",
+            "BF",
+            "BI",
+            "KH",
+            "CM",
+            "CA",
+            "CV",
+            "BQ",
+            "KY",
+            "CF",
+            "TD",
+            "CL",
+            "CN",
+            "CX",
+            "CC",
+            "CO",
+            "KM",
+            "CG",
+            "CD",
+            "CK",
+            "CR",
+            "CI",
+            "HR",
+            "CU",
+            "CW",
+            "CY",
+            "CZ",
+            "DK",
+            "DJ",
+            "DM",
+            "DO",
+            "EC",
+            "EG",
+            "SV",
+            "GQ",
+            "ER",
+            "EE",
+            "SZ",
+            "ET",
+            "FK",
+            "FO",
+            "FJ",
+            "FI",
+            "FR",
+            "GF",
+            "PF",
+            "TF",
+            "GA",
+            "GM",
+            "GE",
+            "DE",
+            "GH",
+            "GI",
+            "GR",
+            "GL",
+            "GD",
+            "GP",
+            "GU",
+            "GT",
+            "GG",
+            "GN",
+            "GW",
+            "GY",
+            "HT",
+            "HM",
+            "HN",
+            "HK",
+            "HU",
+            "IS",
+            "IN",
+            "ID",
+            "IR",
+            "IQ",
+            "IE",
+            "IM",
+            "IL",
+            "IT",
+            "JM",
+            "JP",
+            "JE",
+            "JO",
+            "KZ",
+            "KE",
+            "KI",
+            "XK",
+            "KW",
+            "KG",
+            "LA",
+            "LV",
+            "LB",
+            "LS",
+            "LR",
+            "LY",
+            "LI",
+            "LT",
+            "LU",
+            "MO",
+            "MG",
+            "MW",
+            "MY",
+            "MV",
+            "ML",
+            "MT",
+            "MH",
+            "MQ",
+            "MR",
+            "MU",
+            "YT",
+            "MX",
+            "FM",
+            "MD",
+            "MC",
+            "MN",
+            "ME",
+            "MS",
+            "MA",
+            "MZ",
+            "MM",
+            "NA",
+            "NR",
+            "NP",
+            "NL",
+            "NC",
+            "NZ",
+            "NI",
+            "NE",
+            "NG",
+            "NU",
+            "NF",
+            "KP",
+            "MK",
+            "MP",
+            "NO",
+            "OM",
+            "PK",
+            "PW",
+            "PS",
+            "PA",
+            "PG",
+            "PY",
+            "PE",
+            "PH",
+            "PN",
+            "PL",
+            "PT",
+            "PR",
+            "QA",
+            "RE",
+            "RO",
+            "RU",
+            "RW",
+            "WS",
+            "SM",
+            "ST",
+            "SA",
+            "SN",
+            "RS",
+            "SC",
+            "SL",
+            "SG",
+            "SX",
+            "SK",
+            "SI",
+            "SB",
+            "SO",
+            "ZA",
+            "GS",
+            "KR",
+            "SS",
+            "ES",
+            "LK",
+            "BL",
+            "SH",
+            "KN",
+            "LC",
+            "MF",
+            "PM",
+            "VC",
+            "SD",
+            "SR",
+            "SJ",
+            "SE",
+            "CH",
+            "SY",
+            "TW",
+            "TJ",
+            "TZ",
+            "TH",
+            "TL",
+            "TG",
+            "TK",
+            "TO",
+            "TT",
+            "TN",
+            "TR",
+            "TM",
+            "TC",
+            "TV",
+            "UM",
+            "VI",
+            "UG",
+            "UA",
+            "AE",
+            "GB",
+            "US",
+            "UY",
+            "UZ",
+            "VU",
+            "VA",
+            "VE",
+            "VN",
+            "WF",
+            "EH",
+            "YE",
+            "ZM",
+            "ZW"
+          ],
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "keywords": {
+          "example": [
+            "chatgpt",
+            "openai"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "example": "",
+          "type": "string"
+        },
+        "time_range": {
+          "enum": [
+            "now 1-H",
+            "now 4-H",
+            "now 1-d",
+            "now 7-d",
+            "today 1-m",
+            "today 3-m",
+            "today 12-m",
+            "today 5-y",
+            "all"
+          ],
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "web",
+            "image",
+            "news",
+            "youtube",
+            "shopping"
+          ],
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.ExploreResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "interest_by_region": {
+          "items": {
+            "$ref": "#/definitions/trends.RegionInterest"
+          },
+          "type": "array"
+        },
+        "interest_over_time": {
+          "items": {
+            "$ref": "#/definitions/trends.InterestPoint"
+          },
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "type": "string"
+        },
+        "related_queries": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "related_topics": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "rising_queries": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "time_range": {
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "top_queries": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "type": {
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.InterestByRegionResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "interest_by_region": {
+          "items": {
+            "$ref": "#/definitions/trends.RegionInterest"
+          },
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "type": "string"
+        },
+        "time_range": {
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "type": {
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.InterestOverTimeResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "interest_over_time": {
+          "items": {
+            "$ref": "#/definitions/trends.InterestPoint"
+          },
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "type": "string"
+        },
+        "time_range": {
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "type": {
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.InterestPoint": {
+      "properties": {
+        "formatted_axis_time": {
+          "example": "Apr 2026",
+          "type": "string"
+        },
+        "formatted_time": {
+          "example": "Apr 2026",
+          "type": "string"
+        },
+        "time": {
+          "example": "1777075200",
+          "type": "string"
+        },
+        "values": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendValue"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "trends.RegionInterest": {
+      "properties": {
+        "geo_code": {
+          "example": "US-CA",
+          "type": "string"
+        },
+        "geo_name": {
+          "example": "California",
+          "type": "string"
+        },
+        "values": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendValue"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "trends.RelatedGroup": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedItem"
+          },
+          "type": "array"
+        },
+        "keyword": {
+          "example": "chatgpt",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.RelatedItem": {
+      "properties": {
+        "formatted_value": {
+          "example": "100",
+          "type": "string"
+        },
+        "link": {
+          "example": "/trends/explore?q=chatgpt",
+          "type": "string"
+        },
+        "query": {
+          "example": "chatgpt login",
+          "type": "string"
+        },
+        "topic_mid": {
+          "example": "/g/11khcfz0y2",
+          "type": "string"
+        },
+        "topic_title": {
+          "example": "ChatGPT",
+          "type": "string"
+        },
+        "topic_type": {
+          "example": "Topic",
+          "type": "string"
+        },
+        "value": {
+          "example": 100,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.RelatedTopicsResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "property": {
+          "type": "string"
+        },
+        "related_topics": {
+          "items": {
+            "$ref": "#/definitions/trends.RelatedGroup"
+          },
+          "type": "array"
+        },
+        "time_range": {
+          "example": "today 12-m",
+          "type": "string"
+        },
+        "type": {
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendCategory": {
+      "properties": {
+        "id": {
+          "example": 0,
+          "type": "integer"
+        },
+        "name": {
+          "example": "All",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendValue": {
+      "properties": {
+        "formatted_value": {
+          "example": "87",
+          "type": "string"
+        },
+        "has_data": {
+          "example": true,
+          "type": "boolean"
+        },
+        "keyword": {
+          "example": "chatgpt",
+          "type": "string"
+        },
+        "value": {
+          "example": 87,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendingArticle": {
+      "properties": {
+        "source": {
+          "example": "Example News",
+          "type": "string"
+        },
+        "time": {
+          "example": "2 hours ago",
+          "type": "string"
+        },
+        "title": {
+          "example": "Why chatgpt is trending",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/news",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendingDetailRequest": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "enum": [
+            "WORLDWIDE",
+            "AF",
+            "AX",
+            "AL",
+            "DZ",
+            "AS",
+            "AD",
+            "AO",
+            "AI",
+            "AQ",
+            "AG",
+            "AR",
+            "AM",
+            "AW",
+            "AU",
+            "AT",
+            "AZ",
+            "BS",
+            "BH",
+            "BD",
+            "BB",
+            "BY",
+            "BE",
+            "BZ",
+            "BJ",
+            "BM",
+            "BT",
+            "BO",
+            "BA",
+            "BW",
+            "BV",
+            "BR",
+            "IO",
+            "VG",
+            "BN",
+            "BG",
+            "BF",
+            "BI",
+            "KH",
+            "CM",
+            "CV",
+            "CA",
+            "BQ",
+            "KY",
+            "CF",
+            "TD",
+            "CL",
+            "CN",
+            "CX",
+            "CC",
+            "CO",
+            "KM",
+            "CG",
+            "CD",
+            "CK",
+            "CR",
+            "CI",
+            "HR",
+            "CU",
+            "CW",
+            "CY",
+            "CZ",
+            "DK",
+            "DJ",
+            "DM",
+            "DO",
+            "EC",
+            "EG",
+            "SV",
+            "GQ",
+            "ER",
+            "EE",
+            "SZ",
+            "ET",
+            "FK",
+            "FO",
+            "FJ",
+            "FI",
+            "FR",
+            "GF",
+            "PF",
+            "TF",
+            "GA",
+            "GM",
+            "GE",
+            "DE",
+            "GH",
+            "GI",
+            "GR",
+            "GL",
+            "GD",
+            "GP",
+            "GU",
+            "GT",
+            "GG",
+            "GN",
+            "GW",
+            "GY",
+            "HT",
+            "HM",
+            "HN",
+            "HK",
+            "HU",
+            "IS",
+            "IN",
+            "ID",
+            "IR",
+            "IQ",
+            "IE",
+            "IM",
+            "IL",
+            "IT",
+            "JM",
+            "JP",
+            "JE",
+            "JO",
+            "KZ",
+            "KE",
+            "KI",
+            "XK",
+            "KW",
+            "KG",
+            "LA",
+            "LV",
+            "LB",
+            "LS",
+            "LR",
+            "LY",
+            "LI",
+            "LT",
+            "LU",
+            "MO",
+            "MG",
+            "MW",
+            "MY",
+            "MV",
+            "ML",
+            "MT",
+            "MH",
+            "MQ",
+            "MR",
+            "MU",
+            "YT",
+            "MX",
+            "FM",
+            "MD",
+            "MC",
+            "MN",
+            "ME",
+            "MS",
+            "MA",
+            "MZ",
+            "MM",
+            "NA",
+            "NR",
+            "NP",
+            "NL",
+            "NC",
+            "NZ",
+            "NI",
+            "NE",
+            "NG",
+            "NU",
+            "NF",
+            "KP",
+            "MK",
+            "MP",
+            "NO",
+            "OM",
+            "PK",
+            "PW",
+            "PS",
+            "PA",
+            "PG",
+            "PY",
+            "PE",
+            "PH",
+            "PN",
+            "PL",
+            "PT",
+            "PR",
+            "QA",
+            "RE",
+            "RO",
+            "RU",
+            "RW",
+            "WS",
+            "SM",
+            "ST",
+            "SA",
+            "SN",
+            "RS",
+            "SC",
+            "SL",
+            "SG",
+            "SX",
+            "SK",
+            "SI",
+            "SB",
+            "SO",
+            "ZA",
+            "GS",
+            "KR",
+            "SS",
+            "ES",
+            "LK",
+            "BL",
+            "SH",
+            "KN",
+            "LC",
+            "MF",
+            "PM",
+            "VC",
+            "SD",
+            "SR",
+            "SJ",
+            "SE",
+            "CH",
+            "SY",
+            "TW",
+            "TJ",
+            "TZ",
+            "TH",
+            "TL",
+            "TG",
+            "TK",
+            "TO",
+            "TT",
+            "TN",
+            "TR",
+            "TM",
+            "TC",
+            "TV",
+            "UM",
+            "VI",
+            "UG",
+            "UA",
+            "AE",
+            "GB",
+            "US",
+            "UY",
+            "UZ",
+            "VU",
+            "VA",
+            "VE",
+            "VN",
+            "WF",
+            "EH",
+            "YE",
+            "ZM",
+            "ZW"
+          ],
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "property": {
+          "example": "",
+          "type": "string"
+        },
+        "query": {
+          "example": "chatgpt",
+          "type": "string"
+        },
+        "time_range": {
+          "enum": [
+            "now 1-H",
+            "now 4-H",
+            "now 1-d",
+            "now 7-d",
+            "today 1-m",
+            "today 3-m",
+            "today 12-m",
+            "today 5-y",
+            "all"
+          ],
+          "example": "now 7-d",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "web",
+            "image",
+            "news",
+            "youtube",
+            "shopping"
+          ],
+          "example": "web",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendingItem": {
+      "properties": {
+        "articles": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendingArticle"
+          },
+          "type": "array"
+        },
+        "explore_url": {
+          "example": "https://trends.google.com/trends/explore?q=chatgpt&geo=US",
+          "type": "string"
+        },
+        "query": {
+          "example": "chatgpt",
+          "type": "string"
+        },
+        "rank": {
+          "example": 1,
+          "type": "integer"
+        },
+        "related_terms": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "share_url": {
+          "type": "string"
+        },
+        "started_unix": {
+          "example": 1777075200,
+          "type": "integer"
+        },
+        "status": {
+          "example": "active",
+          "type": "string"
+        },
+        "title": {
+          "example": "chatgpt",
+          "type": "string"
+        },
+        "traffic": {
+          "example": "200K+",
+          "type": "string"
+        },
+        "updated_unix": {
+          "example": 1777078800,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendingResponse": {
+      "properties": {
+        "category": {
+          "example": 0,
+          "type": "integer"
+        },
+        "geo": {
+          "example": "US",
+          "type": "string"
+        },
+        "hl": {
+          "example": "en-US",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendingItem"
+          },
+          "type": "array"
+        },
+        "sort_by": {
+          "example": "relevance",
+          "type": "string"
+        },
+        "status": {
+          "example": "all",
+          "type": "string"
+        },
+        "time_range": {
+          "example": "24h",
+          "type": "string"
+        },
+        "tz": {
+          "example": 0,
+          "type": "integer"
+        },
+        "window": {
+          "example": "24h",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendsCategoriesResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendCategory"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendsEnumsResponse": {
+      "properties": {
+        "explore_time_ranges": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "locations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "search_types": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trend_statuses": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trending_categories": {
+          "items": {
+            "$ref": "#/definitions/trends.TrendCategory"
+          },
+          "type": "array"
+        },
+        "trending_sort_bys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trending_time_ranges": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "trends.TrendsLocationsResponse": {
+      "properties": {
+        "locations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "trends.exploreQueriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.ExploreQueriesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.exploreResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.ExploreResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.interestByRegionResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.InterestByRegionResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.interestOverTimeResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.InterestOverTimeResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.relatedTopicsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.RelatedTopicsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.trendingResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.TrendingResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.trendsCategoriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.TrendsCategoriesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.trendsEnumsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.TrendsEnumsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "trends.trendsLocationsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/trends.TrendsLocationsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/google/finance/analyst-articles/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized analyst article results for a quote.",
+        "operationId": "google-finance-analyst-articles",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.articlesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance analyst articles",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/chart/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized chart points for a quote and window.",
+        "operationId": "google-finance-chart",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          },
+          {
+            "description": "Window: 1d, 5d, 1m, 6m, ytd, 1y, 5y, max",
+            "in": "query",
+            "name": "window",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.chartResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance chart data",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/classification/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized classification strings for a quote.",
+        "operationId": "google-finance-classification",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.classificationResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance classification data",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/company/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized company information from Google Finance.",
+        "operationId": "google-finance-company",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.companyResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance company data",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/context": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Searches Google Finance for instruments matching a company name or ticker query and returns normalized results with ticker, exchange, name, price, currency, and change data. Use a returned ticker with quote, company, chart, or news endpoints.",
+        "operationId": "google-finance-context",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "apple"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.contextResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Find Google Finance instruments by query",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/financials/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized annual and quarterly financial rows when Google Finance has statement data for the quote.",
+        "operationId": "google-finance-financials",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.financialsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance financial statements",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/categories/{category}/news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized news for a Google Finance category.",
+        "operationId": "google-finance-markets-category-news",
+        "parameters": [
+          {
+            "description": "Google Finance category id",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string",
+            "x-example": "2"
+          },
+          {
+            "description": "Result offset",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.categoryNewsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance category news",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/categories/{category}/stocks": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized instruments for a Google Finance category.",
+        "operationId": "google-finance-markets-category-stocks",
+        "parameters": [
+          {
+            "description": "Google Finance category id",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string",
+            "x-example": "2"
+          },
+          {
+            "description": "Result offset",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.categoryStocksResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance category stocks",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/earnings": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized earnings calendar instruments.",
+        "operationId": "google-finance-markets-earnings",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.earningsResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance earnings calendar",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/featured": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized featured instruments.",
+        "operationId": "google-finance-markets-featured",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.instrumentsResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance featured stocks",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/headline": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the top Google Finance headline.",
+        "operationId": "google-finance-markets-headline",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.headlineResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance top headline",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/indices": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized market index instruments.",
+        "operationId": "google-finance-markets-indices",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.instrumentsResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance market indices",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/movers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized market mover instruments.",
+        "operationId": "google-finance-markets-movers",
+        "parameters": [
+          {
+            "description": "Comma-separated numeric categories",
+            "in": "query",
+            "name": "categories",
+            "type": "string"
+          },
+          {
+            "description": "Result count",
+            "in": "query",
+            "name": "count",
+            "type": "integer"
+          },
+          {
+            "description": "Result offset",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.marketMoversResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance market movers",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/top": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized top instruments for a Google Finance metric.",
+        "operationId": "google-finance-markets-top",
+        "parameters": [
+          {
+            "description": "Google Finance metric id",
+            "in": "query",
+            "name": "metric",
+            "type": "integer"
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.topStocksResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance top stocks by metric",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/markets/trending": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized trending instruments.",
+        "operationId": "google-finance-markets-trending",
+        "parameters": [
+          {
+            "description": "Result limit",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.instrumentsResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance trending stocks",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/news/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized news articles for a quote.",
+        "operationId": "google-finance-news",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          },
+          {
+            "description": "Article limit",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.articlesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance quote news",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/quote/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Fetches the latest quote data for a provided stock symbol from Google Finance https://www.google.com/finance/quote/AAPL:NASDAQ?hl=en.",
+        "operationId": "google-finance-quote",
+        "parameters": [
+          {
+            "description": "Stock symbol to fetch the latest quote for (e.g., AAPL:NASDAQ, BTC-USD)",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Latest stock quote data",
+            "schema": {
+              "$ref": "#/definitions/finance.quoteResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance Quote API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/related/{quote}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized related instruments for a quote.",
+        "operationId": "google-finance-related",
+        "parameters": [
+          {
+            "description": "Quote identifier such as AAPL:NASDAQ",
+            "in": "path",
+            "name": "quote",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/finance.relatedResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance related instruments",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Fetches normalized search results for a provided keyword from Google Finance.",
+        "operationId": "google-finance-search",
+        "parameters": [
+          {
+            "description": "Keyword to search for (e.g., Apple)",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "Apple"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "schema": {
+              "$ref": "#/definitions/finance.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Finance upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance Search API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/finance/ticker/{ticker}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Fetches chart ticker data from Google Finance based on a provided ticker and window period.",
+        "operationId": "google-finance-ticker",
+        "parameters": [
+          {
+            "description": "Ticker symbol to fetch data for example:AAPL:NASDAQ, BTC-USD ",
+            "in": "path",
+            "name": "ticker",
+            "required": true,
+            "type": "string",
+            "x-example": "AAPL:NASDAQ"
+          },
+          {
+            "description": "Time window for the ticker data (default: 1d), options: 1d, 5d, 1m, 6m, 1y, 5y, max",
+            "in": "query",
+            "name": "window",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ticker time series",
+            "schema": {
+              "$ref": "#/definitions/finance.tickerResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Finance upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Finance Ticker API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/jobs": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Google Jobs results parsed from public Google web responses.",
+        "operationId": "google-jobs",
+        "parameters": [
+          {
+            "description": "Google Jobs search payload",
+            "in": "body",
+            "name": "option",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/google.JobsOption"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/google.JobsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Google Jobs",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/map/place/{place_id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns detailed information for a specified place_id. Rate limit is enforced at 1 request per second.",
+        "operationId": "google-map-place",
+        "parameters": [
+          {
+            "description": "Google Place ID",
+            "in": "path",
+            "name": "place_id",
+            "required": true,
+            "type": "string",
+            "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-RateLimit-Per-Second-Remaining": {
+                "description": "Number of remaining requests per second",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/google.mapPlaceResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Maps place details API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/map/place/{place_id}/photos": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the photos Google publishes for a specified place_id — the imagery shown on\nthe place's Google Maps page, typically dozens of images for a well-covered business.\nEach entry carries the image URL as served plus its pixel dimensions when reported;\nswap the trailing size suffix on the URL (e.g. `=w203-h100-k-no`) to request other\ndimensions. Contributor avatars and review-attached photos are excluded. This is the\nplace page's image set, not a paginated archive feed. Rate limit is enforced at 1\nrequest per second.",
+        "operationId": "google-map-place-photos",
+        "parameters": [
+          {
+            "description": "Google Place ID",
+            "in": "path",
+            "name": "place_id",
+            "required": true,
+            "type": "string",
+            "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+          },
+          {
+            "description": "Maximum number of photos to return. Omit or 0 for all captured.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-RateLimit-Per-Second-Remaining": {
+                "description": "Number of remaining requests per second",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/google.mapPlacePhotosResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Maps place photos API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/map/place/{place_id}/reviews": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the reviews Google shows on a specified place_id's Google Maps page —\ntypically the 8 most relevant, each with its rating, text, reviewer, timestamp, and\nany photos the reviewer attached. Photo-only reviews return an empty `text`.\nThis is the place page's first page of reviews, not the full review archive.\nRate limit is enforced at 1 request per second.",
+        "operationId": "google-map-place-reviews",
+        "parameters": [
+          {
+            "description": "Google Place ID",
+            "in": "path",
+            "name": "place_id",
+            "required": true,
+            "type": "string",
+            "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+          },
+          {
+            "description": "Maximum number of reviews to return. Omit or 0 for all captured.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-RateLimit-Per-Second-Remaining": {
+                "description": "Number of remaining requests per second",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/google.mapPlaceReviewsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Maps place reviews API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/map/search": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns results from Google Maps based on search options. Rate limit is enforced at 1 request per second.",
+        "operationId": "google-map-search",
+        "parameters": [
+          {
+            "description": "Search options",
+            "in": "body",
+            "name": "mapSearchOption",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/google.MapSearchOption"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-RateLimit-Per-Second-Remaining": {
+                "description": "Number of remaining requests per second",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/google.mapSearchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Maps search API",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns current Google News search results using anonymous HTTP requests with fresh proxy profiles, without browser rendering. Pages slice the finite result snapshot; they do not traverse the Google Search index. Results include title, source, publisher article URL, age, and thumbnail when available. Valid no-results searches and exhausted pages return an empty array. Locale defaults to country=us and lang=en. Returns 503 for blocked or malformed upstream responses.",
+        "operationId": "google-news",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page within the current finite result snapshot; defaults to 1",
+            "in": "query",
+            "minimum": 1,
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Results per page; defaults to 10, clamped to 1..50",
+            "in": "query",
+            "maximum": 50,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Two-letter country code; defaults to us",
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Google UI language; defaults to en",
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/google.newsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query parameters",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Google News",
+        "tags": [
+          "google"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Restored JSON compatibility endpoint. Returns current Google News articles using anonymous HTTP requests with fresh proxy profiles, without browser rendering. Pages slice the finite current result snapshot. Uses the legacy result array and field names; no-results searches and exhausted pages return an empty result array.",
+        "operationId": "google-news-search",
+        "parameters": [
+          {
+            "description": "Search options; keyword, language and country are required. limit defaults to 10 and is clamped to 10..100; page defaults to 1.",
+            "in": "body",
+            "name": "searchOption",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/google.SearchOption"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/google.newsSearchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Google News with JSON",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Google autosuggest query completions from the public unauthenticated suggest JSON endpoint. `source` selects the web, YouTube, or shopping suggestion list, and `rich=true` adds a type, relevance score, and short description to each suggestion.",
+        "operationId": "google-suggest",
+        "parameters": [
+          {
+            "description": "Search query prefix",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Suggestions to return; defaults to 10, clamped to 1..12",
+            "in": "query",
+            "maximum": 12,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Google result country; defaults to us",
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Google UI language; defaults to en",
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en"
+          },
+          {
+            "default": "web",
+            "description": "Suggestion source; defaults to web",
+            "enum": [
+              "web",
+              "youtube",
+              "shopping"
+            ],
+            "in": "query",
+            "name": "source",
+            "type": "string"
+          },
+          {
+            "description": "Add Google's type, relevance score, and description to each suggestion; defaults to false",
+            "in": "query",
+            "name": "rich",
+            "type": "boolean",
+            "x-example": false
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/google.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Suggest Google search queries",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/categories": {
+      "get": {
+        "description": "Returns supported top-level Google Trends category ids and labels for Trending Now category filters.",
+        "operationId": "google-trends-categories",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.trendsCategoriesResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends categories",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/enums": {
+      "get": {
+        "description": "Returns supported Google Trends enum values for explore/trending filters, including locations, date ranges, search types, categories, statuses, and sort modes.",
+        "operationId": "google-trends-enums",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.trendsEnumsResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends enum metadata",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Google Trends keyword analytics from internal Trends widget requests: interest over time, interest by region, related queries, and related topics when available.",
+        "operationId": "google-trends-explore",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.exploreResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends explore data",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore/interest-by-region": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns only the interest-by-region widget from the Google Trends Explore widget flow. Supports multiple comparison terms and returns an empty interest_by_region array when Google returns no rows.",
+        "operationId": "google-trends-explore-interest-by-region",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.interestByRegionResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends interest by region",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore/interest-over-time": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns only the interest-over-time timeline from the Google Trends Explore widget flow. Supports multiple comparison terms.",
+        "operationId": "google-trends-explore-interest-over-time",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.interestOverTimeResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends interest over time",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore/related-topics": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns only the related topics widget from the Google Trends Explore widget flow. Returns an empty related_topics array when Google returns no topic rows for the requested term/filter combination.",
+        "operationId": "google-trends-explore-related-topics",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.relatedTopicsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends related topics",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore/rising-queries": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the Rising related queries widget for one or more Google Trends explore terms. Returns an empty queries array when Google returns no rows for the requested term/filter combination.",
+        "operationId": "google-trends-explore-rising-queries",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.exploreQueriesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends explore rising queries",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/explore/top-queries": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the Top related queries widget for one or more Google Trends explore terms. Returns an empty queries array when Google returns no rows for the requested term/filter combination.",
+        "operationId": "google-trends-explore-top-queries",
+        "parameters": [
+          {
+            "description": "Explore request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.ExploreRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.exploreQueriesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends explore top queries",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/locations": {
+      "get": {
+        "description": "Returns supported Google Trends location codes. Explore endpoints also accept WORLDWIDE.",
+        "operationId": "google-trends-locations",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.trendsLocationsResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends locations",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/trending": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Google Trends Trending Now rows from the internal TrendsUi batch RPC replay.",
+        "operationId": "google-trends-trending",
+        "parameters": [
+          {
+            "default": "US",
+            "description": "Country/territory location code",
+            "enum": [
+              "AF",
+              "AX",
+              "AL",
+              "DZ",
+              "AS",
+              "AD",
+              "AO",
+              "AI",
+              "AQ",
+              "AG",
+              "AR",
+              "AM",
+              "AW",
+              "AU",
+              "AT",
+              "AZ",
+              "BS",
+              "BH",
+              "BD",
+              "BB",
+              "BY",
+              "BE",
+              "BZ",
+              "BJ",
+              "BM",
+              "BT",
+              "BO",
+              "BA",
+              "BW",
+              "BV",
+              "BR",
+              "IO",
+              "VG",
+              "BN",
+              "BG",
+              "BF",
+              "BI",
+              "KH",
+              "CM",
+              "CA",
+              "CV",
+              "BQ",
+              "KY",
+              "CF",
+              "TD",
+              "CL",
+              "CN",
+              "CX",
+              "CC",
+              "CO",
+              "KM",
+              "CG",
+              "CD",
+              "CK",
+              "CR",
+              "CI",
+              "HR",
+              "CU",
+              "CW",
+              "CY",
+              "CZ",
+              "DK",
+              "DJ",
+              "DM",
+              "DO",
+              "EC",
+              "EG",
+              "SV",
+              "GQ",
+              "ER",
+              "EE",
+              "SZ",
+              "ET",
+              "FK",
+              "FO",
+              "FJ",
+              "FI",
+              "FR",
+              "GF",
+              "PF",
+              "TF",
+              "GA",
+              "GM",
+              "GE",
+              "DE",
+              "GH",
+              "GI",
+              "GR",
+              "GL",
+              "GD",
+              "GP",
+              "GU",
+              "GT",
+              "GG",
+              "GN",
+              "GW",
+              "GY",
+              "HT",
+              "HM",
+              "HN",
+              "HK",
+              "HU",
+              "IS",
+              "IN",
+              "ID",
+              "IR",
+              "IQ",
+              "IE",
+              "IM",
+              "IL",
+              "IT",
+              "JM",
+              "JP",
+              "JE",
+              "JO",
+              "KZ",
+              "KE",
+              "KI",
+              "XK",
+              "KW",
+              "KG",
+              "LA",
+              "LV",
+              "LB",
+              "LS",
+              "LR",
+              "LY",
+              "LI",
+              "LT",
+              "LU",
+              "MO",
+              "MG",
+              "MW",
+              "MY",
+              "MV",
+              "ML",
+              "MT",
+              "MH",
+              "MQ",
+              "MR",
+              "MU",
+              "YT",
+              "MX",
+              "FM",
+              "MD",
+              "MC",
+              "MN",
+              "ME",
+              "MS",
+              "MA",
+              "MZ",
+              "MM",
+              "NA",
+              "NR",
+              "NP",
+              "NL",
+              "NC",
+              "NZ",
+              "NI",
+              "NE",
+              "NG",
+              "NU",
+              "NF",
+              "KP",
+              "MK",
+              "MP",
+              "NO",
+              "OM",
+              "PK",
+              "PW",
+              "PS",
+              "PA",
+              "PG",
+              "PY",
+              "PE",
+              "PH",
+              "PN",
+              "PL",
+              "PT",
+              "PR",
+              "QA",
+              "RE",
+              "RO",
+              "RU",
+              "RW",
+              "WS",
+              "SM",
+              "ST",
+              "SA",
+              "SN",
+              "RS",
+              "SC",
+              "SL",
+              "SG",
+              "SX",
+              "SK",
+              "SI",
+              "SB",
+              "SO",
+              "ZA",
+              "GS",
+              "KR",
+              "SS",
+              "ES",
+              "LK",
+              "BL",
+              "SH",
+              "KN",
+              "LC",
+              "MF",
+              "PM",
+              "VC",
+              "SD",
+              "SR",
+              "SJ",
+              "SE",
+              "CH",
+              "SY",
+              "TW",
+              "TJ",
+              "TZ",
+              "TH",
+              "TL",
+              "TG",
+              "TK",
+              "TO",
+              "TT",
+              "TN",
+              "TR",
+              "TM",
+              "TC",
+              "TV",
+              "UM",
+              "VI",
+              "UG",
+              "UA",
+              "AE",
+              "GB",
+              "US",
+              "UY",
+              "UZ",
+              "VU",
+              "VA",
+              "VE",
+              "VN",
+              "WF",
+              "EH",
+              "YE",
+              "ZM",
+              "ZW"
+            ],
+            "in": "query",
+            "name": "geo",
+            "type": "string"
+          },
+          {
+            "default": "en-US",
+            "description": "Google Trends UI locale",
+            "in": "query",
+            "name": "hl",
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Timezone offset minutes",
+            "in": "query",
+            "name": "tz",
+            "type": "integer"
+          },
+          {
+            "default": "24h",
+            "description": "Trend window",
+            "enum": [
+              "4h",
+              "24h",
+              "48h",
+              "7d"
+            ],
+            "in": "query",
+            "name": "window",
+            "type": "string"
+          },
+          {
+            "description": "Alias for window",
+            "enum": [
+              "4h",
+              "24h",
+              "48h",
+              "7d"
+            ],
+            "in": "query",
+            "name": "time_range",
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Trending category id",
+            "enum": [
+              0,
+              3,
+              47,
+              44,
+              22,
+              12,
+              5,
+              7,
+              71,
+              8,
+              45,
+              65,
+              11,
+              13,
+              958,
+              19,
+              16,
+              299,
+              14,
+              66,
+              29,
+              533,
+              174,
+              18,
+              20,
+              67
+            ],
+            "in": "query",
+            "name": "category",
+            "type": "integer"
+          },
+          {
+            "default": "all",
+            "description": "Trend status filter",
+            "enum": [
+              "all",
+              "active",
+              "ended"
+            ],
+            "in": "query",
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "default": "relevance",
+            "description": "Sort mode",
+            "enum": [
+              "relevance",
+              "title",
+              "recency",
+              "search_volume"
+            ],
+            "in": "query",
+            "name": "sort_by",
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Maximum rows to return",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.trendingResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends trending now data",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/trends/trending/detail": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the Explore detail widgets for a single trending term, including interest over time, regional interest, top/rising related queries, and related topics when Google returns them.",
+        "operationId": "google-trends-trending-detail",
+        "parameters": [
+          {
+            "description": "Trending detail request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/trends.TrendingDetailRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trends.exploreResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google Trends upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Trends trending term detail",
+        "tags": [
+          "google"
+        ]
+      }
+    },
+    "/google/videos": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Google video vertical results (title, platform, link, duration, age) parsed from the public Google video results page. Locale defaults to country=us and lang=en. Returns 503 when Google serves a challenge page or unusable HTML.",
+        "operationId": "google-videos",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page number; defaults to 1",
+            "in": "query",
+            "minimum": 1,
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Results per page; defaults to 10, clamped to 1..50",
+            "in": "query",
+            "maximum": 50,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Two-letter country code; defaults to us",
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Google UI language; defaults to en",
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/google.videosResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query parameters",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Google upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Google video results",
+        "tags": [
+          "google"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "google"
+    }
+  ]
+}

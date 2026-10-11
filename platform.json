@@ -1,0 +1,23 @@
+{
+  "async_class_name": "AsyncGoogleClient",
+  "class_name": "GoogleClient",
+  "contract_revision": "sha256:9cafd22a7c790c21e2881fc7de7512496dacd71de9bd3ef0f99f13cef7e4adc2",
+  "display_name": "Google",
+  "general_sdk_version": "1.46.0-sdk.1",
+  "golang_module_name": "github.com/Crawlora-org/crawlora-google",
+  "golang_version": "0.1.0",
+  "group_name": "google",
+  "java_description": "Java client for Crawlora's hosted Google API, with Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs. Requires a Crawlora API key.",
+  "maven_artifact_id": "crawlora-google",
+  "maven_group_id": "net.crawlora",
+  "module_name": "crawlora_google",
+  "npm_name": "@crawlora-org/google",
+  "php_package_name": "crawlora/google",
+  "php_repository": "https://github.com/Crawlora-org/crawlora-google",
+  "platform": "google",
+  "python_name": "crawlora-google",
+  "repository": "https://github.com/Crawlora-org/crawlora-google",
+  "ruby_gem_name": "crawlora-google",
+  "source_contract_sha256": "8f37412b34b49c443ff8c115dadaf9b6a2a82fd767af53137ce5e9f6b288ea20",
+  "version": "0.1.0"
+}

@@ -1,0 +1,2109 @@
+{
+  "platform": "google",
+  "operationCount": 40,
+  "operationIds": [
+    "google-finance-analyst-articles",
+    "google-finance-chart",
+    "google-finance-classification",
+    "google-finance-company",
+    "google-finance-context",
+    "google-finance-financials",
+    "google-finance-markets-category-news",
+    "google-finance-markets-category-stocks",
+    "google-finance-markets-earnings",
+    "google-finance-markets-featured",
+    "google-finance-markets-headline",
+    "google-finance-markets-indices",
+    "google-finance-markets-movers",
+    "google-finance-markets-top",
+    "google-finance-markets-trending",
+    "google-finance-news",
+    "google-finance-quote",
+    "google-finance-related",
+    "google-finance-search",
+    "google-finance-ticker",
+    "google-jobs",
+    "google-map-place",
+    "google-map-place-photos",
+    "google-map-place-reviews",
+    "google-map-search",
+    "google-news",
+    "google-news-search",
+    "google-suggest",
+    "google-trends-categories",
+    "google-trends-enums",
+    "google-trends-explore",
+    "google-trends-explore-interest-by-region",
+    "google-trends-explore-interest-over-time",
+    "google-trends-explore-related-topics",
+    "google-trends-explore-rising-queries",
+    "google-trends-explore-top-queries",
+    "google-trends-locations",
+    "google-trends-trending",
+    "google-trends-trending-detail",
+    "google-videos"
+  ],
+  "methods": {
+    "finance_analyst_articles": "google-finance-analyst-articles",
+    "finance_chart": "google-finance-chart",
+    "finance_classification": "google-finance-classification",
+    "finance_company": "google-finance-company",
+    "finance_context": "google-finance-context",
+    "finance_financials": "google-finance-financials",
+    "finance_markets_category_news": "google-finance-markets-category-news",
+    "finance_markets_category_stocks": "google-finance-markets-category-stocks",
+    "finance_markets_earnings": "google-finance-markets-earnings",
+    "finance_markets_featured": "google-finance-markets-featured",
+    "finance_markets_headline": "google-finance-markets-headline",
+    "finance_markets_indices": "google-finance-markets-indices",
+    "finance_markets_movers": "google-finance-markets-movers",
+    "finance_markets_top": "google-finance-markets-top",
+    "finance_markets_trending": "google-finance-markets-trending",
+    "finance_news": "google-finance-news",
+    "finance_quote": "google-finance-quote",
+    "finance_related": "google-finance-related",
+    "finance_search": "google-finance-search",
+    "finance_ticker": "google-finance-ticker",
+    "jobs": "google-jobs",
+    "map_place": "google-map-place",
+    "map_place_photos": "google-map-place-photos",
+    "map_place_reviews": "google-map-place-reviews",
+    "map_search": "google-map-search",
+    "news": "google-news",
+    "news_search": "google-news-search",
+    "suggest": "google-suggest",
+    "trends_categories": "google-trends-categories",
+    "trends_enums": "google-trends-enums",
+    "trends_explore": "google-trends-explore",
+    "trends_explore_interest_by_region": "google-trends-explore-interest-by-region",
+    "trends_explore_interest_over_time": "google-trends-explore-interest-over-time",
+    "trends_explore_related_topics": "google-trends-explore-related-topics",
+    "trends_explore_rising_queries": "google-trends-explore-rising-queries",
+    "trends_explore_top_queries": "google-trends-explore-top-queries",
+    "trends_locations": "google-trends-locations",
+    "trends_trending": "google-trends-trending",
+    "trends_trending_detail": "google-trends-trending-detail",
+    "videos": "google-videos"
+  },
+  "operations": {
+    "google-finance-analyst-articles": {
+      "id": "google-finance-analyst-articles",
+      "method": "GET",
+      "path": "/google/finance/analyst-articles/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-chart": {
+      "id": "google-finance-chart",
+      "method": "GET",
+      "path": "/google/finance/chart/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [
+        {
+          "name": "window",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        },
+        {
+          "description": "Window: 1d, 5d, 1m, 6m, ytd, 1y, 5y, max",
+          "in": "query",
+          "name": "window",
+          "type": "string"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-classification": {
+      "id": "google-finance-classification",
+      "method": "GET",
+      "path": "/google/finance/classification/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-company": {
+      "id": "google-finance-company",
+      "method": "GET",
+      "path": "/google/finance/company/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-context": {
+      "id": "google-finance-context",
+      "method": "GET",
+      "path": "/google/finance/context",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "apple"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-financials": {
+      "id": "google-finance-financials",
+      "method": "GET",
+      "path": "/google/finance/financials/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-category-news": {
+      "id": "google-finance-markets-category-news",
+      "method": "GET",
+      "path": "/google/finance/markets/categories/{category}/news",
+      "pathParams": [
+        "category"
+      ],
+      "queryParams": [
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Finance category id",
+          "in": "path",
+          "name": "category",
+          "required": true,
+          "type": "string",
+          "x-example": "2"
+        },
+        {
+          "description": "Result offset",
+          "in": "query",
+          "name": "offset",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-category-stocks": {
+      "id": "google-finance-markets-category-stocks",
+      "method": "GET",
+      "path": "/google/finance/markets/categories/{category}/stocks",
+      "pathParams": [
+        "category"
+      ],
+      "queryParams": [
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Finance category id",
+          "in": "path",
+          "name": "category",
+          "required": true,
+          "type": "string",
+          "x-example": "2"
+        },
+        {
+          "description": "Result offset",
+          "in": "query",
+          "name": "offset",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-earnings": {
+      "id": "google-finance-markets-earnings",
+      "method": "GET",
+      "path": "/google/finance/markets/earnings",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-featured": {
+      "id": "google-finance-markets-featured",
+      "method": "GET",
+      "path": "/google/finance/markets/featured",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-headline": {
+      "id": "google-finance-markets-headline",
+      "method": "GET",
+      "path": "/google/finance/markets/headline",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-indices": {
+      "id": "google-finance-markets-indices",
+      "method": "GET",
+      "path": "/google/finance/markets/indices",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-movers": {
+      "id": "google-finance-markets-movers",
+      "method": "GET",
+      "path": "/google/finance/markets/movers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "categories",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Comma-separated numeric categories",
+          "in": "query",
+          "name": "categories",
+          "type": "string"
+        },
+        {
+          "description": "Result count",
+          "in": "query",
+          "name": "count",
+          "type": "integer"
+        },
+        {
+          "description": "Result offset",
+          "in": "query",
+          "name": "offset",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-top": {
+      "id": "google-finance-markets-top",
+      "method": "GET",
+      "path": "/google/finance/markets/top",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "metric",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Finance metric id",
+          "in": "query",
+          "name": "metric",
+          "type": "integer"
+        },
+        {
+          "description": "Page number",
+          "in": "query",
+          "name": "page",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-markets-trending": {
+      "id": "google-finance-markets-trending",
+      "method": "GET",
+      "path": "/google/finance/markets/trending",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Result limit",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-news": {
+      "id": "google-finance-news",
+      "method": "GET",
+      "path": "/google/finance/news/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        },
+        {
+          "description": "Article limit",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-quote": {
+      "id": "google-finance-quote",
+      "method": "GET",
+      "path": "/google/finance/quote/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Stock symbol to fetch the latest quote for (e.g., AAPL:NASDAQ, BTC-USD)",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-related": {
+      "id": "google-finance-related",
+      "method": "GET",
+      "path": "/google/finance/related/{quote}",
+      "pathParams": [
+        "quote"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Quote identifier such as AAPL:NASDAQ",
+          "in": "path",
+          "name": "quote",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-search": {
+      "id": "google-finance-search",
+      "method": "GET",
+      "path": "/google/finance/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Keyword to search for (e.g., Apple)",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "Apple"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-finance-ticker": {
+      "id": "google-finance-ticker",
+      "method": "GET",
+      "path": "/google/finance/ticker/{ticker}",
+      "pathParams": [
+        "ticker"
+      ],
+      "queryParams": [
+        {
+          "name": "window",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Ticker symbol to fetch data for example:AAPL:NASDAQ, BTC-USD ",
+          "in": "path",
+          "name": "ticker",
+          "required": true,
+          "type": "string",
+          "x-example": "AAPL:NASDAQ"
+        },
+        {
+          "description": "Time window for the ticker data (default: 1d), options: 1d, 5d, 1m, 6m, 1y, 5y, max",
+          "in": "query",
+          "name": "window",
+          "type": "string"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-jobs": {
+      "id": "google-jobs",
+      "method": "POST",
+      "path": "/google/jobs",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "option",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Google Jobs search payload",
+          "in": "body",
+          "name": "option",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/google.JobsOption"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-map-place": {
+      "id": "google-map-place",
+      "method": "GET",
+      "path": "/google/map/place/{place_id}",
+      "pathParams": [
+        "place_id"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Place ID",
+          "in": "path",
+          "name": "place_id",
+          "required": true,
+          "type": "string",
+          "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-map-place-photos": {
+      "id": "google-map-place-photos",
+      "method": "GET",
+      "path": "/google/map/place/{place_id}/photos",
+      "pathParams": [
+        "place_id"
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Place ID",
+          "in": "path",
+          "name": "place_id",
+          "required": true,
+          "type": "string",
+          "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+        },
+        {
+          "description": "Maximum number of photos to return. Omit or 0 for all captured.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-map-place-reviews": {
+      "id": "google-map-place-reviews",
+      "method": "GET",
+      "path": "/google/map/place/{place_id}/reviews",
+      "pathParams": [
+        "place_id"
+      ],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Google Place ID",
+          "in": "path",
+          "name": "place_id",
+          "required": true,
+          "type": "string",
+          "x-example": "ChIJs3cv0KuvEmsRHcXYwNJ6GU0"
+        },
+        {
+          "description": "Maximum number of reviews to return. Omit or 0 for all captured.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-map-search": {
+      "id": "google-map-search",
+      "method": "POST",
+      "path": "/google/map/search",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "mapSearchOption",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Search options",
+          "in": "body",
+          "name": "mapSearchOption",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/google.MapSearchOption"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-news": {
+      "id": "google-news",
+      "method": "GET",
+      "path": "/google/news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page within the current finite result snapshot; defaults to 1",
+          "in": "query",
+          "minimum": 1,
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Results per page; defaults to 10, clamped to 1..50",
+          "in": "query",
+          "maximum": 50,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Two-letter country code; defaults to us",
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Google UI language; defaults to en",
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-news-search": {
+      "id": "google-news-search",
+      "method": "POST",
+      "path": "/google/news",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "searchOption",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Search options; keyword, language and country are required. limit defaults to 10 and is clamped to 10..100; page defaults to 1.",
+          "in": "body",
+          "name": "searchOption",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/google.SearchOption"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-suggest": {
+      "id": "google-suggest",
+      "method": "GET",
+      "path": "/google/suggest",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "web",
+            "youtube",
+            "shopping"
+          ]
+        },
+        {
+          "name": "rich",
+          "in": "query",
+          "type": "boolean"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query prefix",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Suggestions to return; defaults to 10, clamped to 1..12",
+          "in": "query",
+          "maximum": 12,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Google result country; defaults to us",
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Google UI language; defaults to en",
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en"
+        },
+        {
+          "default": "web",
+          "description": "Suggestion source; defaults to web",
+          "enum": [
+            "web",
+            "youtube",
+            "shopping"
+          ],
+          "in": "query",
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "description": "Add Google's type, relevance score, and description to each suggestion; defaults to false",
+          "in": "query",
+          "name": "rich",
+          "type": "boolean",
+          "x-example": false
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-categories": {
+      "id": "google-trends-categories",
+      "method": "GET",
+      "path": "/google/trends/categories",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-enums": {
+      "id": "google-trends-enums",
+      "method": "GET",
+      "path": "/google/trends/enums",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore": {
+      "id": "google-trends-explore",
+      "method": "POST",
+      "path": "/google/trends/explore",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore-interest-by-region": {
+      "id": "google-trends-explore-interest-by-region",
+      "method": "POST",
+      "path": "/google/trends/explore/interest-by-region",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore-interest-over-time": {
+      "id": "google-trends-explore-interest-over-time",
+      "method": "POST",
+      "path": "/google/trends/explore/interest-over-time",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore-related-topics": {
+      "id": "google-trends-explore-related-topics",
+      "method": "POST",
+      "path": "/google/trends/explore/related-topics",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore-rising-queries": {
+      "id": "google-trends-explore-rising-queries",
+      "method": "POST",
+      "path": "/google/trends/explore/rising-queries",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-explore-top-queries": {
+      "id": "google-trends-explore-top-queries",
+      "method": "POST",
+      "path": "/google/trends/explore/top-queries",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Explore request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.ExploreRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-locations": {
+      "id": "google-trends-locations",
+      "method": "GET",
+      "path": "/google/trends/locations",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-trending": {
+      "id": "google-trends-trending",
+      "method": "GET",
+      "path": "/google/trends/trending",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "geo",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "AF",
+            "AX",
+            "AL",
+            "DZ",
+            "AS",
+            "AD",
+            "AO",
+            "AI",
+            "AQ",
+            "AG",
+            "AR",
+            "AM",
+            "AW",
+            "AU",
+            "AT",
+            "AZ",
+            "BS",
+            "BH",
+            "BD",
+            "BB",
+            "BY",
+            "BE",
+            "BZ",
+            "BJ",
+            "BM",
+            "BT",
+            "BO",
+            "BA",
+            "BW",
+            "BV",
+            "BR",
+            "IO",
+            "VG",
+            "BN",
+            "BG",
+            "BF",
+            "BI",
+            "KH",
+            "CM",
+            "CA",
+            "CV",
+            "BQ",
+            "KY",
+            "CF",
+            "TD",
+            "CL",
+            "CN",
+            "CX",
+            "CC",
+            "CO",
+            "KM",
+            "CG",
+            "CD",
+            "CK",
+            "CR",
+            "CI",
+            "HR",
+            "CU",
+            "CW",
+            "CY",
+            "CZ",
+            "DK",
+            "DJ",
+            "DM",
+            "DO",
+            "EC",
+            "EG",
+            "SV",
+            "GQ",
+            "ER",
+            "EE",
+            "SZ",
+            "ET",
+            "FK",
+            "FO",
+            "FJ",
+            "FI",
+            "FR",
+            "GF",
+            "PF",
+            "TF",
+            "GA",
+            "GM",
+            "GE",
+            "DE",
+            "GH",
+            "GI",
+            "GR",
+            "GL",
+            "GD",
+            "GP",
+            "GU",
+            "GT",
+            "GG",
+            "GN",
+            "GW",
+            "GY",
+            "HT",
+            "HM",
+            "HN",
+            "HK",
+            "HU",
+            "IS",
+            "IN",
+            "ID",
+            "IR",
+            "IQ",
+            "IE",
+            "IM",
+            "IL",
+            "IT",
+            "JM",
+            "JP",
+            "JE",
+            "JO",
+            "KZ",
+            "KE",
+            "KI",
+            "XK",
+            "KW",
+            "KG",
+            "LA",
+            "LV",
+            "LB",
+            "LS",
+            "LR",
+            "LY",
+            "LI",
+            "LT",
+            "LU",
+            "MO",
+            "MG",
+            "MW",
+            "MY",
+            "MV",
+            "ML",
+            "MT",
+            "MH",
+            "MQ",
+            "MR",
+            "MU",
+            "YT",
+            "MX",
+            "FM",
+            "MD",
+            "MC",
+            "MN",
+            "ME",
+            "MS",
+            "MA",
+            "MZ",
+            "MM",
+            "NA",
+            "NR",
+            "NP",
+            "NL",
+            "NC",
+            "NZ",
+            "NI",
+            "NE",
+            "NG",
+            "NU",
+            "NF",
+            "KP",
+            "MK",
+            "MP",
+            "NO",
+            "OM",
+            "PK",
+            "PW",
+            "PS",
+            "PA",
+            "PG",
+            "PY",
+            "PE",
+            "PH",
+            "PN",
+            "PL",
+            "PT",
+            "PR",
+            "QA",
+            "RE",
+            "RO",
+            "RU",
+            "RW",
+            "WS",
+            "SM",
+            "ST",
+            "SA",
+            "SN",
+            "RS",
+            "SC",
+            "SL",
+            "SG",
+            "SX",
+            "SK",
+            "SI",
+            "SB",
+            "SO",
+            "ZA",
+            "GS",
+            "KR",
+            "SS",
+            "ES",
+            "LK",
+            "BL",
+            "SH",
+            "KN",
+            "LC",
+            "MF",
+            "PM",
+            "VC",
+            "SD",
+            "SR",
+            "SJ",
+            "SE",
+            "CH",
+            "SY",
+            "TW",
+            "TJ",
+            "TZ",
+            "TH",
+            "TL",
+            "TG",
+            "TK",
+            "TO",
+            "TT",
+            "TN",
+            "TR",
+            "TM",
+            "TC",
+            "TV",
+            "UM",
+            "VI",
+            "UG",
+            "UA",
+            "AE",
+            "GB",
+            "US",
+            "UY",
+            "UZ",
+            "VU",
+            "VA",
+            "VE",
+            "VN",
+            "WF",
+            "EH",
+            "YE",
+            "ZM",
+            "ZW"
+          ]
+        },
+        {
+          "name": "hl",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "window",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "4h",
+            "24h",
+            "48h",
+            "7d"
+          ]
+        },
+        {
+          "name": "time_range",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "4h",
+            "24h",
+            "48h",
+            "7d"
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "type": "integer",
+          "enum": [
+            "0",
+            "3",
+            "47",
+            "44",
+            "22",
+            "12",
+            "5",
+            "7",
+            "71",
+            "8",
+            "45",
+            "65",
+            "11",
+            "13",
+            "958",
+            "19",
+            "16",
+            "299",
+            "14",
+            "66",
+            "29",
+            "533",
+            "174",
+            "18",
+            "20",
+            "67"
+          ]
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "active",
+            "ended"
+          ]
+        },
+        {
+          "name": "sort_by",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "relevance",
+            "title",
+            "recency",
+            "search_volume"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "default": "US",
+          "description": "Country/territory location code",
+          "enum": [
+            "AF",
+            "AX",
+            "AL",
+            "DZ",
+            "AS",
+            "AD",
+            "AO",
+            "AI",
+            "AQ",
+            "AG",
+            "AR",
+            "AM",
+            "AW",
+            "AU",
+            "AT",
+            "AZ",
+            "BS",
+            "BH",
+            "BD",
+            "BB",
+            "BY",
+            "BE",
+            "BZ",
+            "BJ",
+            "BM",
+            "BT",
+            "BO",
+            "BA",
+            "BW",
+            "BV",
+            "BR",
+            "IO",
+            "VG",
+            "BN",
+            "BG",
+            "BF",
+            "BI",
+            "KH",
+            "CM",
+            "CA",
+            "CV",
+            "BQ",
+            "KY",
+            "CF",
+            "TD",
+            "CL",
+            "CN",
+            "CX",
+            "CC",
+            "CO",
+            "KM",
+            "CG",
+            "CD",
+            "CK",
+            "CR",
+            "CI",
+            "HR",
+            "CU",
+            "CW",
+            "CY",
+            "CZ",
+            "DK",
+            "DJ",
+            "DM",
+            "DO",
+            "EC",
+            "EG",
+            "SV",
+            "GQ",
+            "ER",
+            "EE",
+            "SZ",
+            "ET",
+            "FK",
+            "FO",
+            "FJ",
+            "FI",
+            "FR",
+            "GF",
+            "PF",
+            "TF",
+            "GA",
+            "GM",
+            "GE",
+            "DE",
+            "GH",
+            "GI",
+            "GR",
+            "GL",
+            "GD",
+            "GP",
+            "GU",
+            "GT",
+            "GG",
+            "GN",
+            "GW",
+            "GY",
+            "HT",
+            "HM",
+            "HN",
+            "HK",
+            "HU",
+            "IS",
+            "IN",
+            "ID",
+            "IR",
+            "IQ",
+            "IE",
+            "IM",
+            "IL",
+            "IT",
+            "JM",
+            "JP",
+            "JE",
+            "JO",
+            "KZ",
+            "KE",
+            "KI",
+            "XK",
+            "KW",
+            "KG",
+            "LA",
+            "LV",
+            "LB",
+            "LS",
+            "LR",
+            "LY",
+            "LI",
+            "LT",
+            "LU",
+            "MO",
+            "MG",
+            "MW",
+            "MY",
+            "MV",
+            "ML",
+            "MT",
+            "MH",
+            "MQ",
+            "MR",
+            "MU",
+            "YT",
+            "MX",
+            "FM",
+            "MD",
+            "MC",
+            "MN",
+            "ME",
+            "MS",
+            "MA",
+            "MZ",
+            "MM",
+            "NA",
+            "NR",
+            "NP",
+            "NL",
+            "NC",
+            "NZ",
+            "NI",
+            "NE",
+            "NG",
+            "NU",
+            "NF",
+            "KP",
+            "MK",
+            "MP",
+            "NO",
+            "OM",
+            "PK",
+            "PW",
+            "PS",
+            "PA",
+            "PG",
+            "PY",
+            "PE",
+            "PH",
+            "PN",
+            "PL",
+            "PT",
+            "PR",
+            "QA",
+            "RE",
+            "RO",
+            "RU",
+            "RW",
+            "WS",
+            "SM",
+            "ST",
+            "SA",
+            "SN",
+            "RS",
+            "SC",
+            "SL",
+            "SG",
+            "SX",
+            "SK",
+            "SI",
+            "SB",
+            "SO",
+            "ZA",
+            "GS",
+            "KR",
+            "SS",
+            "ES",
+            "LK",
+            "BL",
+            "SH",
+            "KN",
+            "LC",
+            "MF",
+            "PM",
+            "VC",
+            "SD",
+            "SR",
+            "SJ",
+            "SE",
+            "CH",
+            "SY",
+            "TW",
+            "TJ",
+            "TZ",
+            "TH",
+            "TL",
+            "TG",
+            "TK",
+            "TO",
+            "TT",
+            "TN",
+            "TR",
+            "TM",
+            "TC",
+            "TV",
+            "UM",
+            "VI",
+            "UG",
+            "UA",
+            "AE",
+            "GB",
+            "US",
+            "UY",
+            "UZ",
+            "VU",
+            "VA",
+            "VE",
+            "VN",
+            "WF",
+            "EH",
+            "YE",
+            "ZM",
+            "ZW"
+          ],
+          "in": "query",
+          "name": "geo",
+          "type": "string"
+        },
+        {
+          "default": "en-US",
+          "description": "Google Trends UI locale",
+          "in": "query",
+          "name": "hl",
+          "type": "string"
+        },
+        {
+          "default": 0,
+          "description": "Timezone offset minutes",
+          "in": "query",
+          "name": "tz",
+          "type": "integer"
+        },
+        {
+          "default": "24h",
+          "description": "Trend window",
+          "enum": [
+            "4h",
+            "24h",
+            "48h",
+            "7d"
+          ],
+          "in": "query",
+          "name": "window",
+          "type": "string"
+        },
+        {
+          "description": "Alias for window",
+          "enum": [
+            "4h",
+            "24h",
+            "48h",
+            "7d"
+          ],
+          "in": "query",
+          "name": "time_range",
+          "type": "string"
+        },
+        {
+          "default": 0,
+          "description": "Trending category id",
+          "enum": [
+            0,
+            3,
+            47,
+            44,
+            22,
+            12,
+            5,
+            7,
+            71,
+            8,
+            45,
+            65,
+            11,
+            13,
+            958,
+            19,
+            16,
+            299,
+            14,
+            66,
+            29,
+            533,
+            174,
+            18,
+            20,
+            67
+          ],
+          "in": "query",
+          "name": "category",
+          "type": "integer"
+        },
+        {
+          "default": "all",
+          "description": "Trend status filter",
+          "enum": [
+            "all",
+            "active",
+            "ended"
+          ],
+          "in": "query",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "default": "relevance",
+          "description": "Sort mode",
+          "enum": [
+            "relevance",
+            "title",
+            "recency",
+            "search_volume"
+          ],
+          "in": "query",
+          "name": "sort_by",
+          "type": "string"
+        },
+        {
+          "default": 20,
+          "description": "Maximum rows to return",
+          "in": "query",
+          "name": "limit",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-trends-trending-detail": {
+      "id": "google-trends-trending-detail",
+      "method": "POST",
+      "path": "/google/trends/trending/detail",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "request",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "Trending detail request",
+          "in": "body",
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/trends.TrendingDetailRequest"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-videos": {
+      "id": "google-videos",
+      "method": "GET",
+      "path": "/google/videos",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page number; defaults to 1",
+          "in": "query",
+          "minimum": 1,
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Results per page; defaults to 10, clamped to 1..50",
+          "in": "query",
+          "maximum": 50,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Two-letter country code; defaults to us",
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Google UI language; defaults to en",
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}
