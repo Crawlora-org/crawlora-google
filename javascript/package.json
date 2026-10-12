@@ -4,7 +4,7 @@
   "description": "Crawlora Google API client with 40 endpoints for Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=google-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-google/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "google", "maps-search", "places", "reviews-photos", "news", "trends", "finance-quotes-markets", "suggestions", "videos", "jobs"],
+  "keywords": ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "google", "google-api", "google-scraper", "google-data", "google-maps-search", "google-places", "google-reviews-photos", "google-news", "google-trends", "google-finance-quotes-markets", "google-suggestions", "google-videos", "google-jobs"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
