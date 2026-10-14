@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted Google API. It exposes 40 endpoin
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-google</artifactId>
-  <version>0.1.1</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 

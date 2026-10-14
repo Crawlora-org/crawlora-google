@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-google"
-version = "0.1.1"
+version = "0.2.0"
 description = "Crawlora Google API client with 40 endpoints for Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs"
 readme = "README.md"
 keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "google", "google-api", "google-scraper", "google-data", "google-maps-search", "google-places", "google-reviews-photos", "google-news", "google-trends", "google-finance-quotes-markets", "google-suggestions", "google-videos", "google-jobs"]

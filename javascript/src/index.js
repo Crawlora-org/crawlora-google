@@ -9,7 +9,7 @@ import {
 
 export class GoogleClient extends CrawloraClient {
   constructor(options = {}) {
-    super({ ...options, userAgent: options.userAgent ?? "crawlora-google-js/0.1.1" });
+    super({ ...options, userAgent: options.userAgent ?? "crawlora-google-js/0.2.0" });
     this["financeAnalystArticles"] = (...args) => this.request("google-finance-analyst-articles", ...args);
     this["financeChart"] = (...args) => this.request("google-finance-chart", ...args);
     this["financeClassification"] = (...args) => this.request("google-finance-classification", ...args);
@@ -62,5 +62,5 @@ export {
   CrawloraServerError
 };
 export { groups, operations, operationCount, OperationIds } from "./operations.js";
-export const VERSION = "0.1.1";
+export const VERSION = "0.2.0";
 export default GoogleClient;

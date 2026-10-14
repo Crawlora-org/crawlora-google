@@ -200,16 +200,19 @@
     "finance.CategoryNewsResponse": {
       "properties": {
         "category": {
+          "description": "Google Finance category id that was requested.",
           "example": "18",
           "type": "string"
         },
         "items": {
+          "description": "News articles listed for the category.",
           "items": {
             "$ref": "#/definitions/finance.FinanceArticle"
           },
           "type": "array"
         },
         "offset": {
+          "description": "Number of articles skipped before this page.",
           "example": 0,
           "type": "integer"
         }
@@ -219,16 +222,19 @@
     "finance.CategoryStocksResponse": {
       "properties": {
         "category": {
+          "description": "Google Finance category id that was requested.",
           "example": "18",
           "type": "string"
         },
         "items": {
+          "description": "Instruments listed for the category.",
           "items": {
             "$ref": "#/definitions/finance.Instrument"
           },
           "type": "array"
         },
         "offset": {
+          "description": "Number of instruments skipped before this page.",
           "example": 0,
           "type": "integer"
         }
@@ -238,19 +244,27 @@
     "finance.ChartResponse": {
       "properties": {
         "instrument": {
-          "$ref": "#/definitions/finance.Instrument"
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Instrument"
+            }
+          ],
+          "description": "Instrument the chart is for."
         },
         "points": {
+          "description": "Chart data points in time order, each with a time, a price and a volume.",
           "items": {
             "$ref": "#/definitions/finance.Ticker"
           },
           "type": "array"
         },
         "previous_close": {
+          "description": "Closing price of the previous trading day.",
           "example": 236.35,
           "type": "number"
         },
         "window": {
+          "description": "Chart window that was returned: `1d`, `5d`, `1m`, `6m`, `ytd`, `1y`, `5y` or `max`.",
           "example": "1m",
           "type": "string"
         }
@@ -260,13 +274,19 @@
     "finance.ClassificationResponse": {
       "properties": {
         "categories": {
+          "description": "Sector or category labels Google Finance assigns to the instrument, for example `Technology`.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "instrument": {
-          "$ref": "#/definitions/finance.Instrument"
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Instrument"
+            }
+          ],
+          "description": "Instrument the labels belong to."
         }
       },
       "type": "object"
@@ -274,53 +294,66 @@
     "finance.CompanyInfo": {
       "properties": {
         "ceo": {
+          "description": "Name of the company's chief executive.",
           "example": "Tim Cook",
           "type": "string"
         },
         "description": {
+          "description": "Company description shown on Google Finance.",
           "type": "string"
         },
         "employees": {
+          "description": "Number of employees.",
           "example": 166000,
           "type": "integer"
         },
         "fifty_two_week_high": {
+          "description": "Highest price over the last 52 weeks.",
           "example": 288.61,
           "type": "number"
         },
         "fifty_two_week_low": {
+          "description": "Lowest price over the last 52 weeks.",
           "example": 169.21,
           "type": "number"
         },
         "headquarters": {
+          "description": "Location of the company's headquarters, for example `Cupertino, CA, US`.",
           "example": "Cupertino, CA, US",
           "type": "string"
         },
         "high": {
+          "description": "Highest price of the trading day.",
           "example": 272.4,
           "type": "number"
         },
         "low": {
+          "description": "Lowest price of the trading day.",
           "example": 269.1,
           "type": "number"
         },
         "market_cap": {
+          "description": "Market capitalisation of the company, as a plain number.",
           "example": 4010000000000,
           "type": "number"
         },
         "open": {
+          "description": "Opening price of the trading day.",
           "example": 270.9,
           "type": "number"
         },
         "pe_ratio": {
+          "description": "Price-to-earnings ratio of the stock.",
           "example": 34.56,
           "type": "number"
         },
         "sector": {
+          "description": "Sector the company belongs to, for example `Technology`.",
           "example": "Technology",
           "type": "string"
         },
         "volume": {
+          "description": "Number of shares traded, as Google Finance shows it.",
           "example": 41339643,
           "type": "integer"
         }
@@ -345,6 +378,7 @@
     "finance.EarningsCalendarResponse": {
       "properties": {
         "items": {
+          "description": "Upcoming earnings events from the Google Finance earnings calendar.",
           "items": {
             "$ref": "#/definitions/finance.EarningsEvent"
           },
@@ -356,25 +390,36 @@
     "finance.EarningsEvent": {
       "properties": {
         "company_name": {
+          "description": "Name of the company reporting earnings.",
           "type": "string"
         },
         "conference_phone": {
+          "description": "Phone number for the earnings call.",
           "type": "string"
         },
         "conference_url": {
+          "description": "URL of the earnings call.",
           "type": "string"
         },
         "event_time": {
+          "description": "Time of the earnings event, in UTC (RFC 3339).",
           "type": "string"
         },
         "event_unix": {
+          "description": "Time of the earnings event, in Unix seconds.",
           "type": "integer"
         },
         "fiscal_period": {
+          "description": "Fiscal period the earnings report covers.",
           "type": "string"
         },
         "instrument": {
-          "$ref": "#/definitions/finance.Instrument"
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Instrument"
+            }
+          ],
+          "description": "Instrument of the company reporting earnings."
         }
       },
       "type": "object"
@@ -382,30 +427,37 @@
     "finance.FinanceArticle": {
       "properties": {
         "published_at": {
+          "description": "Time the article was published, in UTC (RFC 3339).",
           "type": "string"
         },
         "published_unix": {
+          "description": "Time the article was published, in Unix seconds.",
           "example": 1777077000,
           "type": "integer"
         },
         "related": {
+          "description": "Instruments mentioned in the article.",
           "items": {
             "$ref": "#/definitions/finance.Instrument"
           },
           "type": "array"
         },
         "source": {
+          "description": "Name of the publisher of the article.",
           "example": "Reuters",
           "type": "string"
         },
         "thumbnail_url": {
+          "description": "URL of the article thumbnail image.",
           "type": "string"
         },
         "title": {
+          "description": "Headline of the article.",
           "example": "Apple announces an update",
           "type": "string"
         },
         "url": {
+          "description": "URL of the article on the publisher's site.",
           "example": "https://example.com/news",
           "type": "string"
         }
@@ -415,61 +467,80 @@
     "finance.FinancialPeriod": {
       "properties": {
         "capital_expenditure": {
+          "description": "Capital expenditure for the period.",
           "type": "number"
         },
         "ebitda": {
+          "description": "Earnings before interest, taxes, depreciation and amortisation for the period.",
           "type": "number"
         },
         "eps": {
+          "description": "Earnings per share for the period.",
           "type": "number"
         },
         "eps_diluted": {
+          "description": "Diluted earnings per share for the period.",
           "type": "number"
         },
         "free_cash_flow": {
+          "description": "Free cash flow for the period.",
           "type": "number"
         },
         "net_income": {
+          "description": "Net income for the period, in the response currency.",
           "type": "number"
         },
         "operating_cash_flow": {
+          "description": "Cash flow from operations for the period.",
           "type": "number"
         },
         "operating_income": {
+          "description": "Operating income for the period.",
           "type": "number"
         },
         "operating_margin": {
+          "description": "Operating margin for the period.",
           "type": "number"
         },
         "pe_ratio": {
+          "description": "Price-to-earnings ratio for the period.",
           "type": "number"
         },
         "period": {
+          "description": "Period label: `annual` when the period ends in December, otherwise `quarterly`.",
           "example": "annual",
           "type": "string"
         },
         "period_end": {
+          "description": "End date of the reporting period, in UTC (RFC 3339).",
           "type": "string"
         },
         "profit_margin": {
+          "description": "Profit margin for the period.",
           "type": "number"
         },
         "revenue": {
+          "description": "Total revenue for the period, in the response currency.",
           "type": "number"
         },
         "revenue_growth_yoy": {
+          "description": "Revenue growth compared with the same period a year earlier.",
           "type": "number"
         },
         "shares_outstanding": {
+          "description": "Number of shares outstanding for the period.",
           "type": "number"
         },
         "total_assets": {
+          "description": "Total assets at the end of the period.",
           "type": "number"
         },
         "total_equity": {
+          "description": "Total shareholder equity at the end of the period.",
           "type": "number"
         },
         "total_liabilities": {
+          "description": "Total liabilities at the end of the period.",
           "type": "number"
         }
       },
@@ -478,16 +549,19 @@
     "finance.FinancialsResponse": {
       "properties": {
         "annual": {
+          "description": "Annual financial statement rows.",
           "items": {
             "$ref": "#/definitions/finance.FinancialPeriod"
           },
           "type": "array"
         },
         "currency": {
+          "description": "Currency code the amounts are reported in, for example `USD`.",
           "example": "USD",
           "type": "string"
         },
         "quarterly": {
+          "description": "Quarterly financial statement rows.",
           "items": {
             "$ref": "#/definitions/finance.FinancialPeriod"
           },
@@ -587,61 +661,80 @@
     "finance.Instrument": {
       "properties": {
         "after_hours": {
-          "$ref": "#/definitions/finance.PriceChange"
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.PriceChange"
+            }
+          ],
+          "description": "Price and change in after-hours trading."
         },
         "change": {
+          "description": "Price change shown by Google Finance, in the same unit as `price`.",
           "example": -3.37,
           "type": "number"
         },
         "change_percent": {
+          "description": "Price change as a percentage, as Google Finance shows it.",
           "example": -1.3,
           "type": "number"
         },
         "country": {
+          "description": "Country code of the instrument, for example `US`.",
           "example": "US",
           "type": "string"
         },
         "currency": {
+          "description": "Currency code the instrument is priced in, for example `USD`.",
           "example": "USD",
           "type": "string"
         },
         "exchange": {
+          "description": "Exchange the instrument trades on, for example `NASDAQ`.",
           "example": "NASDAQ",
           "type": "string"
         },
         "google_id": {
+          "description": "Google's id for the instrument, for example `/m/07zmbvf`.",
           "example": "/m/07zmbvf",
           "type": "string"
         },
         "identifier": {
+          "description": "Instrument identifier in `TICKER:EXCHANGE` form, for example `AAPL:NASDAQ`. Use it as the `quote` path parameter.",
           "example": "AAPL:NASDAQ",
           "type": "string"
         },
         "last_update_unix": {
+          "description": "Time of the latest price update, in Unix seconds.",
           "example": 1777077000,
           "type": "integer"
         },
         "name": {
+          "description": "Instrument name, for example `Apple Inc`.",
           "example": "Apple Inc",
           "type": "string"
         },
         "previous_close": {
+          "description": "Closing price of the previous trading day.",
           "example": 236.35,
           "type": "number"
         },
         "price": {
+          "description": "Latest price of the instrument.",
           "example": 255.65,
           "type": "number"
         },
         "ticker": {
+          "description": "Ticker symbol of the instrument.",
           "example": "AAPL",
           "type": "string"
         },
         "timezone": {
+          "description": "IANA time zone of the instrument's market, for example `America/New_York`.",
           "example": "America/New_York",
           "type": "string"
         },
         "type": {
+          "description": "Kind of instrument: `stock`, `index`, `crypto`, `etf` or `other`.",
           "example": "stock",
           "type": "string"
         }
@@ -750,22 +843,26 @@
     "finance.MarketMoversResponse": {
       "properties": {
         "categories": {
+          "description": "Numeric category ids the movers were filtered by.",
           "items": {
             "type": "integer"
           },
           "type": "array"
         },
         "count": {
+          "description": "Number of instruments requested.",
           "example": 20,
           "type": "integer"
         },
         "items": {
+          "description": "Market mover instruments.",
           "items": {
             "$ref": "#/definitions/finance.Instrument"
           },
           "type": "array"
         },
         "offset": {
+          "description": "Number of instruments skipped before this page.",
           "example": 0,
           "type": "integer"
         }
@@ -800,14 +897,17 @@
     "finance.PriceChange": {
       "properties": {
         "change": {
+          "description": "Price change, in the same unit as `price`.",
           "example": -3.37,
           "type": "number"
         },
         "change_percent": {
+          "description": "Price change as a percentage.",
           "example": -1.3,
           "type": "number"
         },
         "price": {
+          "description": "Price in after-hours trading.",
           "example": 255.65,
           "type": "number"
         }
@@ -880,9 +980,15 @@
     "finance.RelatedResponse": {
       "properties": {
         "instrument": {
-          "$ref": "#/definitions/finance.Instrument"
+          "allOf": [
+            {
+              "$ref": "#/definitions/finance.Instrument"
+            }
+          ],
+          "description": "Instrument the related list is for."
         },
         "items": {
+          "description": "Instruments Google Finance lists as related.",
           "items": {
             "$ref": "#/definitions/finance.Instrument"
           },
@@ -954,16 +1060,19 @@
     "finance.TopStocksResponse": {
       "properties": {
         "items": {
+          "description": "Top instruments for the selected metric.",
           "items": {
             "$ref": "#/definitions/finance.Instrument"
           },
           "type": "array"
         },
         "metric": {
+          "description": "Google Finance metric id that was applied.",
           "example": 6,
           "type": "integer"
         },
         "page": {
+          "description": "Page number returned.",
           "example": 1,
           "type": "integer"
         }
@@ -1257,27 +1366,35 @@
     "google.JobItem": {
       "properties": {
         "company": {
+          "description": "Name of the hiring company.",
           "type": "string"
         },
         "employment": {
+          "description": "Employment type shown on the job card, for example full-time.",
           "type": "string"
         },
         "location": {
+          "description": "Job location as shown on the job card.",
           "type": "string"
         },
         "posted_at": {
+          "description": "How long ago the job was posted, as Google shows it, for example `3 days ago`.",
           "type": "string"
         },
         "snippet": {
+          "description": "Short description text from the job card.",
           "type": "string"
         },
         "source": {
+          "description": "Site or board Google lists the job from.",
           "type": "string"
         },
         "title": {
+          "description": "Job title as shown on the job card.",
           "type": "string"
         },
         "url": {
+          "description": "URL of the job posting.",
           "type": "string"
         }
       },
@@ -1306,18 +1423,22 @@
     "google.JobsResponse": {
       "properties": {
         "location": {
+          "description": "Location filter that was applied. Omitted when none was given.",
           "example": "San Francisco, CA",
           "type": "string"
         },
         "page": {
+          "description": "Page number returned, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "query": {
+          "description": "Search query that was run.",
           "example": "software engineer",
           "type": "string"
         },
         "results": {
+          "description": "Job postings on this page.",
           "items": {
             "$ref": "#/definitions/google.JobItem"
           },
@@ -1346,9 +1467,15 @@
     "google.NewsResponse": {
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/google.VerticalPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/google.VerticalPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "results": {
+          "description": "Google News results in Google's order.",
           "items": {
             "$ref": "#/definitions/google.NewsResult"
           },
@@ -1360,30 +1487,37 @@
     "google.NewsResult": {
       "properties": {
         "age": {
+          "description": "How long ago the article was published, as Google shows it.",
           "example": "2 hours ago",
           "type": "string"
         },
         "description": {
+          "description": "Article snippet as shown on the Google results page.",
           "example": "OpenAI announced an update.",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the article across all pages for the query, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "source": {
+          "description": "Name of the publication, for example `Example News`.",
           "example": "Example News",
           "type": "string"
         },
         "thumbnail": {
+          "description": "URL of the article thumbnail.",
           "example": "https://example.com/thumb.jpg",
           "type": "string"
         },
         "title": {
+          "description": "Article headline as shown on the Google results page.",
           "example": "OpenAI announces update",
           "type": "string"
         },
         "url": {
+          "description": "URL of the news article.",
           "example": "https://example.com/openai-news",
           "type": "string"
         }
@@ -1404,10 +1538,12 @@
     "google.Place": {
       "properties": {
         "address": {
+          "description": "Full street address of the place as shown on Google Maps.",
           "example": "250 Beach St, San Francisco, CA 94133",
           "type": "string"
         },
         "amenities": {
+          "description": "Amenities Google Maps lists for the place, for example `Free Wi-Fi`.",
           "example": [
             "['Free Wi-Fi'",
             " 'Air-conditioned'",
@@ -1420,6 +1556,7 @@
           "type": "array"
         },
         "category": {
+          "description": "Business categories Google Maps assigns to the place.",
           "example": [
             "['hotel']"
           ],
@@ -1429,18 +1566,22 @@
           "type": "array"
         },
         "description": {
+          "description": "Description of the place from its Google Maps listing.",
           "example": "A 3-minute walk from Pier 41 in the Fisherman's Wharf district...",
           "type": "string"
         },
         "image": {
+          "description": "URL of the main photo of the place.",
           "example": "https://lh5.googleusercontent.com/p/AF1QipP_O55x7gOwR3AaM09CVmzEUude9wMHMPwc--yp",
           "type": "string"
         },
         "latitude": {
+          "description": "Latitude of the place in decimal degrees.",
           "example": 37.8077617,
           "type": "number"
         },
         "locations": {
+          "description": "Location names Google Maps associates with the place, such as nearby areas.",
           "example": [
             "['San Francisco'",
             " 'Los Angeles']"
@@ -1451,18 +1592,22 @@
           "type": "array"
         },
         "longitude": {
+          "description": "Longitude of the place in decimal degrees.",
           "example": -122.4132228,
           "type": "number"
         },
         "name": {
+          "description": "Name of the place as shown on Google Maps.",
           "example": "Hotel Zephyr San Francisco",
           "type": "string"
         },
         "phone": {
+          "description": "Phone number of the place, as digits.",
           "example": "14156176565",
           "type": "string"
         },
         "place_id": {
+          "description": "Google Place ID. Use it with the place, reviews and photos endpoints.",
           "example": "ChIJ99URUeOAhYAR0J5ZUxTesDQ",
           "type": "string"
         },
@@ -1473,14 +1618,17 @@
           "x-nullable": true
         },
         "review_count": {
+          "description": "Number of Google reviews for the place.",
           "example": 3213,
           "type": "integer"
         },
         "url": {
+          "description": "Google Maps URL of the place.",
           "example": "https://www.google.com/maps/place/?q=place_id:ChIJ99URUeOAhYAR0J5ZUxTesDQ",
           "type": "string"
         },
         "website": {
+          "description": "Website of the place.",
           "example": "https://www.hotelzephyrsf.com/",
           "type": "string"
         }
@@ -1490,6 +1638,7 @@
     "google.PlacePhoto": {
       "properties": {
         "height": {
+          "description": "Pixel height of the image at its URL. 0 when Google does not report it.",
           "example": 100,
           "type": "integer"
         },
@@ -1641,14 +1790,17 @@
     "google.SuggestResponse": {
       "properties": {
         "query": {
+          "description": "Query prefix the suggestions were requested for.",
           "example": "openai",
           "type": "string"
         },
         "source": {
+          "description": "Suggestion list used: `web`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "suggestions": {
+          "description": "Search suggestions Google returned, in order.",
           "items": {
             "$ref": "#/definitions/google.SuggestionResult"
           },
@@ -1660,22 +1812,27 @@
     "google.SuggestionResult": {
       "properties": {
         "description": {
+          "description": "Short descriptor Google shows beside the suggestion. Only set when the request used `rich=true`.",
           "example": "OpenAI Blog",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the suggestion in the list, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "query": {
+          "description": "Suggested search query.",
           "example": "openai api",
           "type": "string"
         },
         "relevance": {
+          "description": "Relevance score Google gives the suggestion. Only set when the request used `rich=true`.",
           "example": 601,
           "type": "integer"
         },
         "type": {
+          "description": "Suggestion type as Google labels it, for example `QUERY`. Only set when the request used `rich=true`.",
           "example": "QUERY",
           "type": "string"
         }
@@ -1685,14 +1842,17 @@
     "google.VerticalPagination": {
       "properties": {
         "next_page": {
+          "description": "Page number of the next page. Omitted when there is no next page.",
           "example": 2,
           "type": "integer"
         },
         "page": {
+          "description": "Page number of this response, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "previous_page": {
+          "description": "Page number of the previous page. Omitted on the first page.",
           "example": 1,
           "type": "integer"
         }
@@ -1702,34 +1862,42 @@
     "google.VideoResult": {
       "properties": {
         "age": {
+          "description": "When the video was published, as Google shows it.",
           "example": "2 days ago",
           "type": "string"
         },
         "description": {
+          "description": "Video description snippet as shown on the Google results page.",
           "example": "Watch the OpenAI DevDay keynote.",
           "type": "string"
         },
         "duration": {
+          "description": "Video length as Google shows it, for example `45:12`.",
           "example": "45:12",
           "type": "string"
         },
         "platform": {
+          "description": "Platform hosting the video, for example `YouTube`.",
           "example": "YouTube",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the video across all pages for the query, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "thumbnail": {
+          "description": "URL of the video thumbnail.",
           "example": "https://example.com/thumb.jpg",
           "type": "string"
         },
         "title": {
+          "description": "Video title as shown on the Google results page.",
           "example": "OpenAI DevDay keynote - YouTube",
           "type": "string"
         },
         "url": {
+          "description": "URL of the video page.",
           "example": "https://www.youtube.com/watch?v=openai-devday",
           "type": "string"
         }
@@ -1739,9 +1907,15 @@
     "google.VideosResponse": {
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/google.VerticalPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/google.VerticalPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "results": {
+          "description": "Video results in Google's order.",
           "items": {
             "$ref": "#/definitions/google.VideoResult"
           },
@@ -1890,45 +2064,55 @@
     "trends.ExploreQueriesResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Location code the data covers, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "keywords": {
+          "description": "Keywords that were compared.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "property": {
+          "description": "Google property filter that was applied, matching `type`.",
           "type": "string"
         },
         "queries": {
+          "description": "Related queries, grouped by keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "query_type": {
+          "description": "Kind of related queries returned: `top` or `rising`.",
           "example": "top",
           "type": "string"
         },
         "time_range": {
+          "description": "Time range that was applied, such as `today 12-m`.",
           "example": "today 12-m",
           "type": "string"
         },
         "type": {
+          "description": "Search type that was applied: `web`, `image`, `news`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         }
@@ -2252,71 +2436,85 @@
     "trends.ExploreResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Location code the data covers, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "interest_by_region": {
+          "description": "Interest in each keyword by region.",
           "items": {
             "$ref": "#/definitions/trends.RegionInterest"
           },
           "type": "array"
         },
         "interest_over_time": {
+          "description": "Interest in each keyword over time, one point per time step.",
           "items": {
             "$ref": "#/definitions/trends.InterestPoint"
           },
           "type": "array"
         },
         "keywords": {
+          "description": "Keywords that were compared.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "property": {
+          "description": "Google property filter that was applied, matching `type`.",
           "type": "string"
         },
         "related_queries": {
+          "description": "Top related queries, grouped by keyword. Same content as `top_queries`.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "related_topics": {
+          "description": "Related topics, grouped by keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "rising_queries": {
+          "description": "Rising related queries, grouped by keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "time_range": {
+          "description": "Time range that was applied, such as `today 12-m`.",
           "example": "today 12-m",
           "type": "string"
         },
         "top_queries": {
+          "description": "Top related queries, grouped by keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "type": {
+          "description": "Search type that was applied: `web`, `image`, `news`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         }
@@ -2326,41 +2524,50 @@
     "trends.InterestByRegionResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Location code the data covers, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "interest_by_region": {
+          "description": "Interest in each keyword by region.",
           "items": {
             "$ref": "#/definitions/trends.RegionInterest"
           },
           "type": "array"
         },
         "keywords": {
+          "description": "Keywords that were compared.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "property": {
+          "description": "Google property filter that was applied, matching `type`.",
           "type": "string"
         },
         "time_range": {
+          "description": "Time range that was applied, such as `today 12-m`.",
           "example": "today 12-m",
           "type": "string"
         },
         "type": {
+          "description": "Search type that was applied: `web`, `image`, `news`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         }
@@ -2370,41 +2577,50 @@
     "trends.InterestOverTimeResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Location code the data covers, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "interest_over_time": {
+          "description": "Interest in each keyword over time, one point per time step.",
           "items": {
             "$ref": "#/definitions/trends.InterestPoint"
           },
           "type": "array"
         },
         "keywords": {
+          "description": "Keywords that were compared.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "property": {
+          "description": "Google property filter that was applied, matching `type`.",
           "type": "string"
         },
         "time_range": {
+          "description": "Time range that was applied, such as `today 12-m`.",
           "example": "today 12-m",
           "type": "string"
         },
         "type": {
+          "description": "Search type that was applied: `web`, `image`, `news`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         }
@@ -2414,18 +2630,22 @@
     "trends.InterestPoint": {
       "properties": {
         "formatted_axis_time": {
+          "description": "Date label used on the chart axis, such as `Apr 2026`.",
           "example": "Apr 2026",
           "type": "string"
         },
         "formatted_time": {
+          "description": "Date label of this point as Google Trends shows it, such as `Apr 2026`.",
           "example": "Apr 2026",
           "type": "string"
         },
         "time": {
+          "description": "Time of this data point, in Unix seconds, as a string.",
           "example": "1777075200",
           "type": "string"
         },
         "values": {
+          "description": "Interest value for each keyword at this point.",
           "items": {
             "$ref": "#/definitions/trends.TrendValue"
           },
@@ -2437,14 +2657,17 @@
     "trends.RegionInterest": {
       "properties": {
         "geo_code": {
+          "description": "Code of the region, such as `US-CA`.",
           "example": "US-CA",
           "type": "string"
         },
         "geo_name": {
+          "description": "Name of the region, such as `California`.",
           "example": "California",
           "type": "string"
         },
         "values": {
+          "description": "Interest value for each keyword in this region.",
           "items": {
             "$ref": "#/definitions/trends.TrendValue"
           },
@@ -2456,12 +2679,14 @@
     "trends.RelatedGroup": {
       "properties": {
         "items": {
+          "description": "Related entries for this keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedItem"
           },
           "type": "array"
         },
         "keyword": {
+          "description": "Keyword the related entries belong to.",
           "example": "chatgpt",
           "type": "string"
         }
@@ -2471,30 +2696,37 @@
     "trends.RelatedItem": {
       "properties": {
         "formatted_value": {
+          "description": "Value as Google Trends displays it.",
           "example": "100",
           "type": "string"
         },
         "link": {
+          "description": "Google Trends path that opens this entry in Explore.",
           "example": "/trends/explore?q=chatgpt",
           "type": "string"
         },
         "query": {
+          "description": "Related search query.",
           "example": "chatgpt login",
           "type": "string"
         },
         "topic_mid": {
+          "description": "Google topic ID of the related topic, such as `/g/11khcfz0y2`.",
           "example": "/g/11khcfz0y2",
           "type": "string"
         },
         "topic_title": {
+          "description": "Title of the related topic.",
           "example": "ChatGPT",
           "type": "string"
         },
         "topic_type": {
+          "description": "Type label of the related topic, such as `Topic`.",
           "example": "Topic",
           "type": "string"
         },
         "value": {
+          "description": "Relative popularity score Google Trends gives the entry.",
           "example": 100,
           "type": "integer"
         }
@@ -2504,41 +2736,50 @@
     "trends.RelatedTopicsResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Location code the data covers, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "keywords": {
+          "description": "Keywords that were compared.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "property": {
+          "description": "Google property filter that was applied, matching `type`.",
           "type": "string"
         },
         "related_topics": {
+          "description": "Related topics, grouped by keyword.",
           "items": {
             "$ref": "#/definitions/trends.RelatedGroup"
           },
           "type": "array"
         },
         "time_range": {
+          "description": "Time range that was applied, such as `today 12-m`.",
           "example": "today 12-m",
           "type": "string"
         },
         "type": {
+          "description": "Search type that was applied: `web`, `image`, `news`, `youtube` or `shopping`.",
           "example": "web",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         }
@@ -2548,10 +2789,12 @@
     "trends.TrendCategory": {
       "properties": {
         "id": {
+          "description": "Trends category ID. Pass it as `category`.",
           "example": 0,
           "type": "integer"
         },
         "name": {
+          "description": "Category name, such as `All`.",
           "example": "All",
           "type": "string"
         }
@@ -2561,18 +2804,22 @@
     "trends.TrendValue": {
       "properties": {
         "formatted_value": {
+          "description": "Interest score as Google Trends displays it.",
           "example": "87",
           "type": "string"
         },
         "has_data": {
+          "description": "Whether Google Trends has data for this keyword at this point.",
           "example": true,
           "type": "boolean"
         },
         "keyword": {
+          "description": "Keyword the value belongs to.",
           "example": "chatgpt",
           "type": "string"
         },
         "value": {
+          "description": "Relative interest score for the keyword, as Google Trends reports it.",
           "example": 87,
           "type": "integer"
         }
@@ -2582,18 +2829,22 @@
     "trends.TrendingArticle": {
       "properties": {
         "source": {
+          "description": "Name of the news outlet that published the article.",
           "example": "Example News",
           "type": "string"
         },
         "time": {
+          "description": "When the article was published, as Google words it, such as `2 hours ago`.",
           "example": "2 hours ago",
           "type": "string"
         },
         "title": {
+          "description": "Headline of the news article.",
           "example": "Why chatgpt is trending",
           "type": "string"
         },
         "url": {
+          "description": "URL of the news article.",
           "example": "https://example.com/news",
           "type": "string"
         }
@@ -2911,49 +3162,60 @@
     "trends.TrendingItem": {
       "properties": {
         "articles": {
+          "description": "News articles linked to the trend.",
           "items": {
             "$ref": "#/definitions/trends.TrendingArticle"
           },
           "type": "array"
         },
         "explore_url": {
+          "description": "Google Trends Explore URL for the trend.",
           "example": "https://trends.google.com/trends/explore?q=chatgpt&geo=US",
           "type": "string"
         },
         "query": {
+          "description": "Search query behind the trend.",
           "example": "chatgpt",
           "type": "string"
         },
         "rank": {
+          "description": "Rank of the trend in the list, with `1` as the top entry.",
           "example": 1,
           "type": "integer"
         },
         "related_terms": {
+          "description": "Related search terms listed for the trend.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "share_url": {
+          "description": "Link for sharing the trend.",
           "type": "string"
         },
         "started_unix": {
+          "description": "Time the trend started, in Unix seconds.",
           "example": 1777075200,
           "type": "integer"
         },
         "status": {
+          "description": "Whether the trend is `active` or `ended`.",
           "example": "active",
           "type": "string"
         },
         "title": {
+          "description": "Title of the trend.",
           "example": "chatgpt",
           "type": "string"
         },
         "traffic": {
+          "description": "Approximate search volume label for the trend, such as `200K+`.",
           "example": "200K+",
           "type": "string"
         },
         "updated_unix": {
+          "description": "Time the trend was last updated, in Unix seconds.",
           "example": 1777078800,
           "type": "integer"
         }
@@ -2963,40 +3225,49 @@
     "trends.TrendingResponse": {
       "properties": {
         "category": {
+          "description": "Trends category ID that was applied. `0` means all categories.",
           "example": 0,
           "type": "integer"
         },
         "geo": {
+          "description": "Country code the trends cover, such as `US`.",
           "example": "US",
           "type": "string"
         },
         "hl": {
+          "description": "Locale that was applied, such as `en-US`.",
           "example": "en-US",
           "type": "string"
         },
         "items": {
+          "description": "Trending searches, one entry per trend.",
           "items": {
             "$ref": "#/definitions/trends.TrendingItem"
           },
           "type": "array"
         },
         "sort_by": {
+          "description": "Sort order that was applied: `relevance`, `title`, `recency` or `search_volume`.",
           "example": "relevance",
           "type": "string"
         },
         "status": {
+          "description": "Status filter that was applied: `all`, `active` or `ended`.",
           "example": "all",
           "type": "string"
         },
         "time_range": {
+          "description": "Time window that was applied. Same value as `window`.",
           "example": "24h",
           "type": "string"
         },
         "tz": {
+          "description": "Timezone offset in minutes that was applied.",
           "example": 0,
           "type": "integer"
         },
         "window": {
+          "description": "Time window that was applied: `4h`, `24h`, `48h` or `7d`.",
           "example": "24h",
           "type": "string"
         }
@@ -3006,6 +3277,7 @@
     "trends.TrendsCategoriesResponse": {
       "properties": {
         "categories": {
+          "description": "Supported Trends categories, each with an ID and name.",
           "items": {
             "$ref": "#/definitions/trends.TrendCategory"
           },
@@ -3017,42 +3289,49 @@
     "trends.TrendsEnumsResponse": {
       "properties": {
         "explore_time_ranges": {
+          "description": "Supported `time_range` values for the Explore endpoints.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "locations": {
+          "description": "Supported location codes.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "search_types": {
+          "description": "Supported search `type` values.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "trend_statuses": {
+          "description": "Supported `status` values for Trending Now.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "trending_categories": {
+          "description": "Supported category IDs for Trending Now, each with a name.",
           "items": {
             "$ref": "#/definitions/trends.TrendCategory"
           },
           "type": "array"
         },
         "trending_sort_bys": {
+          "description": "Supported `sort_by` values for Trending Now.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "trending_time_ranges": {
+          "description": "Supported `window` values for Trending Now.",
           "items": {
             "type": "string"
           },
@@ -3064,6 +3343,7 @@
     "trends.TrendsLocationsResponse": {
       "properties": {
         "locations": {
+          "description": "Supported location codes, such as `US`.",
           "items": {
             "type": "string"
           },
@@ -3244,7 +3524,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized analyst article results for a quote.",
+        "description": "Returns the analyst articles Google Finance shows for a quote such as `AAPL:NASDAQ`. Each article has its title, source, URL, publication time (ISO and Unix), thumbnail and the related instruments with price, change and exchange. Articles come back only when Google Finance has them for that quote.",
         "operationId": "google-finance-analyst-articles",
         "parameters": [
           {
@@ -3307,7 +3587,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized chart points for a quote and window.",
+        "description": "Returns the price chart for a Google Finance quote such as `AAPL:NASDAQ` or `BTC-USD` over a window from `1d` to `max` (default `1d`). Each point has a time, price and volume; the response also carries the instrument's name, exchange, currency, current price, change and previous close.",
         "operationId": "google-finance-chart",
         "parameters": [
           {
@@ -3376,7 +3656,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized classification strings for a quote.",
+        "description": "Returns the category labels Google Finance assigns to a quote such as `AAPL:NASDAQ`, for example Technology, in `categories`. The response also carries the instrument itself: ticker, exchange, name, current price, change, previous close, currency and after-hours data.",
         "operationId": "google-finance-classification",
         "parameters": [
           {
@@ -3439,7 +3719,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized company information from Google Finance.",
+        "description": "Returns Google Finance company details for a quote such as `AAPL:NASDAQ`: description, CEO, employee count, headquarters, sector, market capitalisation, P/E ratio, open, day high and low, 52-week high and low, and volume.",
         "operationId": "google-finance-company",
         "parameters": [
           {
@@ -3502,7 +3782,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Searches Google Finance for instruments matching a company name or ticker query and returns normalized results with ticker, exchange, name, price, currency, and change data. Use a returned ticker with quote, company, chart, or news endpoints.",
+        "description": "Searches Google Finance for instruments matching a company name or ticker query and returns results with ticker, exchange, name, price, currency, and change data. Use a returned ticker with quote, company, chart, or news endpoints.",
         "operationId": "google-finance-context",
         "parameters": [
           {
@@ -3565,7 +3845,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized annual and quarterly financial rows when Google Finance has statement data for the quote.",
+        "description": "Returns the financial statements Google Finance holds for a quote such as `AAPL:NASDAQ`, as `annual` and `quarterly` rows plus a `currency`. Each row has revenue, net income, EBITDA, EPS, margins, cash flow, assets, liabilities and equity. The rows are empty when Google Finance has no statement data for the quote.",
         "operationId": "google-finance-financials",
         "parameters": [
           {
@@ -3628,7 +3908,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized news for a Google Finance category.",
+        "description": "Returns Google Finance news for one market category, identified by the `category` path id. Use `offset` to page through results. Each item has its title, URL and publication time (ISO and Unix), plus the source, a thumbnail and any related quotes with price, change and percent change when Google provides them. The response also echoes `category` and `offset`.",
         "operationId": "google-finance-markets-category-news",
         "parameters": [
           {
@@ -3697,7 +3977,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized instruments for a Google Finance category.",
+        "description": "Lists the instruments in one Google Finance market category, chosen by the required `category` id and paged with `offset`. Each item has its ticker, exchange, name, price, change and change percent, previous close, currency, country and after-hours data.",
         "operationId": "google-finance-markets-category-stocks",
         "parameters": [
           {
@@ -3766,7 +4046,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized earnings calendar instruments.",
+        "description": "Returns the Google Finance earnings calendar. Each item has the company name, fiscal period, event time (including a Unix timestamp), conference call phone and URL when listed, and the instrument with its ticker, exchange, price and change.",
         "operationId": "google-finance-markets-earnings",
         "produces": [
           "application/json"
@@ -3807,7 +4087,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized featured instruments.",
+        "description": "Returns the stocks Google Finance features on its markets page. Each instrument has its ticker, exchange, name, price, change and change percent, previous close, currency, country, time zone and after-hours data.",
         "operationId": "google-finance-markets-featured",
         "produces": [
           "application/json"
@@ -3848,7 +4128,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns the top Google Finance headline.",
+        "description": "Returns the top headline on Google Finance markets as one article: title, source, URL, publication time (ISO and Unix), thumbnail and the related instruments with price and change. The article is present only when Google Finance shows a headline.",
         "operationId": "google-finance-markets-headline",
         "produces": [
           "application/json"
@@ -3889,7 +4169,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized market index instruments.",
+        "description": "Returns the market indices Google Finance lists, such as the Dow Jones Industrial Average. Each index has its ticker, exchange, name, current value, change and change percent, previous close and last update time.",
         "operationId": "google-finance-markets-indices",
         "produces": [
           "application/json"
@@ -3930,7 +4210,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized market mover instruments.",
+        "description": "Lists Google Finance market movers. `categories` takes comma-separated numeric categories, `count` sets how many items to return (default 20) and `offset` skips ahead. Each item has its ticker, exchange, name, price, change and change percent, and previous close.",
         "operationId": "google-finance-markets-movers",
         "parameters": [
           {
@@ -4003,7 +4283,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized top instruments for a Google Finance metric.",
+        "description": "Lists the top Google Finance instruments for a ranking metric. `metric` is a Google Finance metric id (default 6) and `page` is the page number (default 1). Each item has its ticker, exchange, name, price, change and change percent, and previous close.",
         "operationId": "google-finance-markets-top",
         "parameters": [
           {
@@ -4058,7 +4338,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized trending instruments.",
+        "description": "Returns the instruments currently trending on Google Finance, up to `limit` items (default 18). Each has its ticker, exchange, name, price, change and change percent, previous close, currency and after-hours data.",
         "operationId": "google-finance-markets-trending",
         "parameters": [
           {
@@ -4107,7 +4387,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized news articles for a quote.",
+        "description": "Returns recent Google Finance news for one quote, such as `AAPL:NASDAQ`, given in the `quote` path parameter. `limit` caps the number of articles and defaults to 6. Each article has its title, source, URL, publication time (ISO and Unix), thumbnail, and related quotes with price and change data.",
         "operationId": "google-finance-news",
         "parameters": [
           {
@@ -4176,7 +4456,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Fetches the latest quote data for a provided stock symbol from Google Finance https://www.google.com/finance/quote/AAPL:NASDAQ?hl=en.",
+        "description": "Returns the Google Finance quote page for a symbol such as `AAPL:NASDAQ` or `BTC-USD`. The response carries key stats, an about section (CEO, employees, founded, headquarters, website), news, and investment tables for the income statement, balance sheet and cash flow by quarter and year.",
         "operationId": "google-finance-quote",
         "parameters": [
           {
@@ -4227,7 +4507,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized related instruments for a quote.",
+        "description": "Returns the instruments Google Finance lists as related to a quote such as `AAPL:NASDAQ`. The response gives the queried `instrument` and an `items` list, each with ticker, exchange, name, price, change and change percent, and previous close.",
         "operationId": "google-finance-related",
         "parameters": [
           {
@@ -4290,7 +4570,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Fetches normalized search results for a provided keyword from Google Finance.",
+        "description": "Searches Google Finance for instruments matching `q`, such as a company name. Each match has its ticker, exchange, company name, currency, price, change and percentage change.",
         "operationId": "google-finance-search",
         "parameters": [
           {
@@ -4347,7 +4627,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Fetches chart ticker data from Google Finance based on a provided ticker and window period.",
+        "description": "Returns the price series Google Finance charts for a ticker such as `AAPL:NASDAQ` or `BTC-USD`. `window` sets the range: `1d` (default), `5d`, `1m`, `6m`, `ytd`, `1y`, `5y` or `max`. Each point has a `time`, `price` and `volume`.",
         "operationId": "google-finance-ticker",
         "parameters": [
           {
@@ -4410,7 +4690,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Google Jobs results parsed from public Google web responses.",
+        "description": "Searches Google Jobs for the `query` in the request body, optionally narrowed by `location` and paged with `page`. Each result has the job title, company, location, employment type, posting time, snippet, source and URL. The response echoes the query, location and page.",
         "operationId": "google-jobs",
         "parameters": [
           {
@@ -4468,7 +4748,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns detailed information for a specified place_id. Rate limit is enforced at 1 request per second.",
+        "description": "Returns the Google Maps details of one place by its Google `place_id`: name, categories, address, coordinates, phone, website, description, image, amenities, rating and review count. `rating` is `null` when the place has no aggregate rating on Google.",
         "operationId": "google-map-place",
         "parameters": [
           {
@@ -4669,7 +4949,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns results from Google Maps based on search options. Rate limit is enforced at 1 request per second.",
+        "description": "Searches Google Maps with a request body of `keyword`, `language` and `country` (an ISO-2 code such as `us`), all required. Each place has its name, place id, categories, address, coordinates, phone, website, rating and review count. `rating` is `null` when Google has no aggregate rating.",
         "operationId": "google-map-search",
         "parameters": [
           {
@@ -4733,7 +5013,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns current Google News search results using anonymous HTTP requests with fresh proxy profiles, without browser rendering. Pages slice the finite result snapshot; they do not traverse the Google Search index. Results include title, source, publisher article URL, age, and thumbnail when available. Valid no-results searches and exhausted pages return an empty array. Locale defaults to country=us and lang=en. Returns 503 for blocked or malformed upstream responses.",
+        "description": "Returns current Google News search results. Pages slice the finite result snapshot; they do not traverse the Google Search index. Results include title, source, publisher article URL, age, and thumbnail when available. Valid no-results searches and exhausted pages return an empty array. Locale defaults to country=us and lang=en. Returns 503 for blocked or malformed upstream responses.",
         "operationId": "google-news",
         "parameters": [
           {
@@ -4825,7 +5105,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Restored JSON compatibility endpoint. Returns current Google News articles using anonymous HTTP requests with fresh proxy profiles, without browser rendering. Pages slice the finite current result snapshot. Uses the legacy result array and field names; no-results searches and exhausted pages return an empty result array.",
+        "description": "Restored JSON compatibility endpoint. Returns current Google News articles. Pages slice the finite current result snapshot. Uses the legacy result array and field names; no-results searches and exhausted pages return an empty result array.",
         "operationId": "google-news-search",
         "parameters": [
           {
@@ -4991,7 +5271,7 @@
     },
     "/google/trends/categories": {
       "get": {
-        "description": "Returns supported top-level Google Trends category ids and labels for Trending Now category filters.",
+        "description": "Returns the top-level Google Trends categories as id and name pairs, such as 0 for All and 20 for Sports. These are the ids accepted by the Trending Now category filter.",
         "operationId": "google-trends-categories",
         "produces": [
           "application/json"
@@ -5070,7 +5350,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Google Trends keyword analytics from internal Trends widget requests: interest over time, interest by region, related queries, and related topics when available.",
+        "description": "Returns Google Trends keyword analytics: interest over time, interest by region, related queries, and related topics when available.",
         "operationId": "google-trends-explore",
         "parameters": [
           {
@@ -5198,7 +5478,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns only the interest-over-time timeline from the Google Trends Explore widget flow. Supports multiple comparison terms.",
+        "description": "Returns Google Trends interest over time for 1 to 5 `keywords`. Optional inputs are `geo` (default worldwide), `time_range` (default `today 12-m`), `hl`, `tz`, `category` and `type` (`web`, `image`, `news`, `youtube` or `shopping`). Each time point carries a value per keyword, with a `has_data` flag.",
         "operationId": "google-trends-explore-interest-over-time",
         "parameters": [
           {
@@ -5451,7 +5731,7 @@
     },
     "/google/trends/locations": {
       "get": {
-        "description": "Returns supported Google Trends location codes. Explore endpoints also accept WORLDWIDE.",
+        "description": "Returns the list of location codes that Google Trends supports, such as `US`, `HK` and `GB`, in `locations`. The Explore endpoints also accept `WORLDWIDE`, which appears in the list. It takes no parameters.",
         "operationId": "google-trends-locations",
         "produces": [
           "application/json"
@@ -5492,7 +5772,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Google Trends Trending Now rows from the internal TrendsUi batch RPC replay.",
+        "description": "Returns Google Trends Trending Now for a country or territory (`geo`, default `US`): each trend's query, rank, search traffic, status, start and update time, related terms and news articles, with explore and share links. Filter by time window, category and status, and choose the sort order.",
         "operationId": "google-trends-trending",
         "parameters": [
           {
@@ -5976,7 +6256,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Google video vertical results (title, platform, link, duration, age) parsed from the public Google video results page. Locale defaults to country=us and lang=en. Returns 503 when Google serves a challenge page or unusable HTML.",
+        "description": "Returns Google video vertical results (title, platform, link, duration, age). Locale defaults to country=us and lang=en. Returns 503 when Google serves a challenge page or an unusable response.",
         "operationId": "google-videos",
         "parameters": [
           {

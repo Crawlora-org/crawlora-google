@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/google",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Crawlora Google API client with 40 endpoints for Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=google-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-google/issues" },
