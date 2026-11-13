@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted Google API. Access 40 API endpo
 - Python: [`crawlora-google`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-google`](go.mod)
 - Ruby: [`crawlora-google`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-google:0.2.0`](java/README.md)
+- Java: [`net.crawlora:crawlora-google:0.2.1`](java/README.md)
 - PHP: [`crawlora/google`](php/README.md)
 - Rust: [`crawlora-google`](rust/README.md)
 

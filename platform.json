@@ -1,11 +1,12 @@
 {
+  "api_path_prefix": "/google/",
   "async_class_name": "AsyncGoogleClient",
   "class_name": "GoogleClient",
-  "contract_revision": "sha256:8db88e8b908a130295c5df80bead8c65485e1eb4a293ceaa55add4ec77d7d071",
+  "contract_revision": "sha256:a04744a8cf0d1b2f64f4a5508b782d97fdc88a38edbd067a3c0d8fe5e8c401df",
   "display_name": "Google",
   "general_sdk_version": "1.46.0-sdk.1",
   "golang_module_name": "github.com/Crawlora-org/crawlora-google",
-  "golang_version": "0.2.0",
+  "golang_version": "0.2.1",
   "group_name": "google",
   "java_description": "Java client for Crawlora's hosted Google API, with Maps search, places, reviews and photos; News; Trends; Finance quotes and markets; suggestions; videos; and jobs. Requires a Crawlora API key.",
   "maven_artifact_id": "crawlora-google",
@@ -17,6 +18,13 @@
   "platform": "google",
   "python_name": "crawlora-google",
   "releases": [
+    {
+      "changes": [
+        "Updated operation contracts: google-map-search."
+      ],
+      "date": "2026-11-13",
+      "version": "0.2.1"
+    },
     {
       "changes": [
         "Updated operation contracts: google-finance-analyst-articles, google-finance-chart, google-finance-classification, google-finance-company, google-finance-context, google-finance-financials, google-finance-markets-category-news, google-finance-markets-category-stocks, google-finance-markets-earnings, google-finance-markets-featured, google-finance-markets-headline, google-finance-markets-indices, google-finance-markets-movers, google-finance-markets-top, google-finance-markets-trending, google-finance-news, google-finance-quote, google-finance-related, google-finance-search, google-finance-ticker, google-jobs, google-map-place, google-map-place-photos, google-map-place-reviews, google-map-search, google-news, google-news-search, google-suggest, google-trends-categories, google-trends-enums, google-trends-explore, google-trends-explore-interest-by-region, google-trends-explore-interest-over-time, google-trends-explore-related-topics, google-trends-explore-rising-queries, google-trends-explore-top-queries, google-trends-locations, google-trends-trending, google-trends-trending-detail, google-videos."
@@ -37,6 +45,6 @@
   "ruby_gem_name": "crawlora-google",
   "rust_crate_name": "crawlora-google",
   "rust_module_name": "crawlora_google",
-  "source_contract_sha256": "edf94a318d422a94556084a811322eca2f95fd990cb37ad55abc6475c46b633a",
-  "version": "0.2.0"
+  "source_contract_sha256": "123c5406ee3b92b07d2ef3dbe21a6ded54b79b25d26c13cbb905a34e3ecc7118",
+  "version": "0.2.1"
 }
