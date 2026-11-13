@@ -6,10 +6,10 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = GoogleClient
 AsyncClient = AsyncGoogleClient
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 DISPLAY_NAME = 'Google'
 PLATFORM = 'google'
-CONTRACT_REVISION = 'sha256:8db88e8b908a130295c5df80bead8c65485e1eb4a293ceaa55add4ec77d7d071'
+CONTRACT_REVISION = 'sha256:a04744a8cf0d1b2f64f4a5508b782d97fdc88a38edbd067a3c0d8fe5e8c401df'
 
 __all__ = [
     "GoogleClient", "AsyncGoogleClient", "Client", "AsyncClient",

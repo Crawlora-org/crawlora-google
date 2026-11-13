@@ -1007,7 +1007,7 @@ export interface GoogleTrendsTrendingParams {
   "tz"?: number;
   "window"?: "4h" | "24h" | "48h" | "7d";
   "time_range"?: "4h" | "24h" | "48h" | "7d";
-  "category"?: "0" | "3" | "47" | "44" | "22" | "12" | "5" | "7" | "71" | "8" | "45" | "65" | "11" | "13" | "958" | "19" | "16" | "299" | "14" | "66" | "29" | "533" | "174" | "18" | "20" | "67";
+  "category"?: 0 | 3 | 47 | 44 | 22 | 12 | 5 | 7 | 71 | 8 | 45 | 65 | 11 | 13 | 958 | 19 | 16 | 299 | 14 | 66 | 29 | 533 | 174 | 18 | 20 | 67;
   "status"?: "all" | "active" | "ended";
   "sort_by"?: "relevance" | "title" | "recency" | "search_volume";
   "limit"?: number;

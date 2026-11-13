@@ -4949,7 +4949,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Searches Google Maps with a request body of `keyword`, `language` and `country` (an ISO-2 code such as `us`), all required. Each place has its name, place id, categories, address, coordinates, phone, website, rating and review count. `rating` is `null` when Google has no aggregate rating.",
+        "description": "Searches Google Maps with a request body of `keyword` (required) plus optional `language` (default `en`) and `country` (an ISO-2 code such as `us`, default `us`). Each place has its name, place id, categories, address, coordinates, phone, website, rating and review count. `rating` is `null` when Google has no aggregate rating.",
         "operationId": "google-map-search",
         "parameters": [
           {
